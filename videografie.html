@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videografie – Stefan G. König | SK Studio München</title>
+  <meta name="description" content="Erklärfilme, Corporate Videos und Imagefilme. Bewegtbild, das Ihre Botschaft trägt. Stefan G. König, München.">
+  <link rel="canonical" href="https://sk-studio.de/videografie.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/output.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-body bg-paper text-ink antialiased">
+
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:text-sm focus:rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-stone transition-colors duration-300" x-data="{ open: false }">
+  <div class="px-6 md:px-10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between h-16" aria-label="Hauptnavigation">
+
+      <a href="index.html" aria-label="SK Studio – zur Startseite" class="flex items-center">
+        <img src="assets/images/SK_logo_schwarz.png" alt="SK Studio" width="40" height="30" class="h-8 w-auto">
+      </a>
+
+      <ul class="hidden md:flex items-center gap-6" role="list">
+        <li><a href="fotografie.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fotografie</a></li>
+        <li><a href="videografie.html" class="font-body text-sm text-ink font-medium tracking-wide border-b border-ink pb-0.5" aria-current="page">Videografie</a></li>
+        <li><a href="fine-art.html"    class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fine Art</a></li>
+        <li><a href="ueber-mich.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Über Mich</a></li>
+        <li>
+          <a href="index.html#kontakt" class="font-body text-sm px-5 py-2 border border-ink text-ink hover:bg-ink hover:text-paper transition-all duration-300 tracking-wide ml-2">
+            Kontakt
+          </a>
+        </li>
+      </ul>
+
+      <button @click="open = !open" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]" :aria-expanded="open" aria-label="Menü öffnen">
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-[6px]' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-[6px]' : ''"></span>
+      </button>
+    </nav>
+  </div>
+
+    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" @click.away="open = false" class="md:hidden bg-paper border-t border-stone px-6 py-8">
+      <ul class="flex flex-col gap-6" role="list">
+        <li><a href="fotografie.html"       @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fotografie</a></li>
+        <li><a href="videografie.html"      @click="open = false" class="font-body text-xl text-ink font-medium">Videografie</a></li>
+        <li><a href="fine-art.html"         @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fine Art</a></li>
+        <li><a href="ueber-mich.html"       @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Über Mich</a></li>
+        <li><a href="index.html#kontakt"    @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="content" class="pt-16">
+
+    <!-- HERO -->
+    <section class="pt-10 pb-24 md:pt-14 md:pb-32 px-6 md:px-10" aria-label="Videografie">
+      <div class="max-w-6xl mx-auto">
+        <p class="section-label mb-10" data-fade>Multidisziplinäres Handwerk · 02</p>
+        <h1
+          class="font-display font-extrabold leading-[0.88] tracking-tight text-ink"
+          style="font-size: clamp(3.5rem, 11vw, 10rem);"
+          data-fade data-fade-delay="1"
+        >
+          Videografie.
+        </h1>
+        <p class="font-body text-lg md:text-xl text-muted max-w-xl leading-relaxed" style="margin-top: 100px;" data-fade data-fade-delay="2">
+          Bewegtbild, das Ihre Botschaft trägt. Nicht umgekehrt.
+        </p>
+        <p class="mt-6 font-body text-sm md:text-base text-muted/80 max-w-2xl leading-relaxed" data-fade data-fade-delay="3">
+          Von Erklärfilmen über Corporate Videos bis hin zu Imagefilmen – jedes Format entsteht aus einem klaren kommunikativen Ziel heraus. Showreel und Referenzen folgen in Kürze.
+        </p>
+      </div>
+    </section>
+
+    <!-- VIDEO PLACEHOLDER GRID -->
+    <section class="pb-24 md:pb-36 px-6 md:px-10" aria-label="Arbeitsproben">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone" data-fade>
+
+          <!-- Placeholder 1 -->
+          <div class="aspect-video bg-neutral-200 flex items-center justify-center">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" stroke="#a3a3a3" stroke-width="1.5"/>
+              <polygon points="16,13 30,20 16,27" fill="none" stroke="#a3a3a3" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Placeholder 2 -->
+          <div class="aspect-video bg-neutral-200 flex items-center justify-center">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" stroke="#a3a3a3" stroke-width="1.5"/>
+              <polygon points="16,13 30,20 16,27" fill="none" stroke="#a3a3a3" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Placeholder 3 -->
+          <div class="aspect-video bg-neutral-200 flex items-center justify-center">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="19" stroke="#a3a3a3" stroke-width="1.5"/>
+              <polygon points="16,13 30,20 16,27" fill="none" stroke="#a3a3a3" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-ink py-24 md:py-32 px-6 md:px-10" aria-label="Kontakt">
+      <div class="max-w-6xl mx-auto" data-fade>
+        <p class="section-label text-stone/50 mb-6">Bewegtbild für Ihre Marke?</p>
+        <h2
+          class="font-display font-extrabold leading-[0.92] tracking-tight text-paper mb-12"
+          style="font-size: clamp(2rem, 5vw, 4.5rem);"
+        >
+          Kontakt aufnehmen.
+        </h2>
+        <a
+          href="mailto:kontakt@koenig-stefan.de"
+          class="inline-flex items-center gap-3 bg-paper text-ink font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-stone transition-colors duration-300"
+        >
+          Kontakt aufnehmen <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink border-t border-paper/10 py-8 px-6 md:px-10" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-body text-sm text-paper/30">© <time datetime="2026">2026</time> Stefan G. König · SK Studio</p>
+      <nav aria-label="Rechtliches" class="flex items-center gap-6">
+        <a href="impressum.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Impressum</a>
+        <a href="datenschutz.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

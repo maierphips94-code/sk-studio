@@ -1,0 +1,13 @@
+{
+  "name": "sk-studio",
+  "version": "1.0.0",
+  "description": "SK Studio – Stefan G. König | Markenberater und kreativer Umsetzer, München",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./assets/output.css --minify",
+    "dev": "tailwindcss -i ./src/input.css -o ./assets/output.css --watch"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.39.1",
+    "tailwindcss": "^3.4.0"
+  }
+}

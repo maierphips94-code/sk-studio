@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body text-ink bg-paper antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .section-label {
+    @apply font-body text-xs tracking-[0.25em] uppercase text-muted;
+  }
+  .section-label-light {
+    @apply font-body text-xs tracking-[0.25em] uppercase text-stone/60;
+  }
+}
+
+/* ─── Leistungen Sticky Scroll ─── */
+.leistung-step {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 5%;
+  pointer-events: none;
+}
+.leistung-step.is-active {
+  pointer-events: auto;
+}
+.leistung-number {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.leistung-content {
+  will-change: opacity;
+}
+
+@media (max-width: 767px) {
+  .leistung-step {
+    position: static;
+    pointer-events: auto;
+    padding-top: 0;
+  }
+  .leistung-content {
+    opacity: 1 !important;
+  }
+  .leistung-number {
+    opacity: 0.12 !important;
+    transform: none !important;
+  }
+}
+
+/* ─── Scroll-Fade-Animationen ─── */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-fade].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-fade-delay="1"] { transition-delay: 0.1s; }
+[data-fade-delay="2"] { transition-delay: 0.2s; }
+[data-fade-delay="3"] { transition-delay: 0.3s; }

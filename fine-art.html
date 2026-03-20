@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fine Art – Stefan G. König | SK Studio München</title>
+  <meta name="description" content="Fine Art Fotografie von Stefan G. König. Persönliche Arbeit. Eigene Handschrift. Kein Briefing.">
+  <link rel="canonical" href="https://sk-studio.de/fine-art.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/output.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-body bg-paper text-ink antialiased">
+
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:text-sm focus:rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-stone transition-colors duration-300" x-data="{ open: false }">
+  <div class="px-6 md:px-10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between h-16" aria-label="Hauptnavigation">
+
+      <a href="index.html" aria-label="SK Studio – zur Startseite" class="flex items-center">
+        <img src="assets/images/SK_logo_schwarz.png" alt="SK Studio" width="40" height="30" class="h-8 w-auto">
+      </a>
+
+      <ul class="hidden md:flex items-center gap-6" role="list">
+        <li><a href="fotografie.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fotografie</a></li>
+        <li><a href="videografie.html" class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Videografie</a></li>
+        <li><a href="fine-art.html"    class="font-body text-sm text-ink font-medium tracking-wide border-b border-ink pb-0.5" aria-current="page">Fine Art</a></li>
+        <li><a href="ueber-mich.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Über Mich</a></li>
+        <li>
+          <a href="index.html#kontakt" class="font-body text-sm px-5 py-2 border border-ink text-ink hover:bg-ink hover:text-paper transition-all duration-300 tracking-wide ml-2">
+            Kontakt
+          </a>
+        </li>
+      </ul>
+
+      <button @click="open = !open" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]" :aria-expanded="open" aria-label="Menü öffnen">
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-[6px]' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-[6px]' : ''"></span>
+      </button>
+    </nav>
+  </div>
+
+    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" @click.away="open = false" class="md:hidden bg-paper border-t border-stone px-6 py-8">
+      <ul class="flex flex-col gap-6" role="list">
+        <li><a href="fotografie.html"       @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fotografie</a></li>
+        <li><a href="videografie.html"      @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Videografie</a></li>
+        <li><a href="fine-art.html"         @click="open = false" class="font-body text-xl text-ink font-medium">Fine Art</a></li>
+        <li><a href="ueber-mich.html"       @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Über Mich</a></li>
+        <li><a href="index.html#kontakt"    @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="content" class="pt-16">
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- HERO                                                     -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="pt-10 pb-24 md:pt-14 md:pb-32 px-6 md:px-10" aria-label="Fine Art">
+      <div class="max-w-6xl mx-auto">
+
+        <p class="section-label mb-10" data-fade>Multidisziplinäres Handwerk · 03</p>
+
+        <h1
+          class="font-display font-extrabold leading-[0.88] tracking-tight text-ink"
+          style="font-size: clamp(3.5rem, 11vw, 10rem); margin-left: -10px;"
+          data-fade data-fade-delay="1"
+        >
+          Fine Art.
+        </h1>
+
+        <p class="font-body text-lg md:text-xl text-muted max-w-xl leading-relaxed" style="margin-top: 100px;" data-fade data-fade-delay="2">
+          Persönliche Arbeit. Eigene Handschrift. Kein Briefing.
+        </p>
+
+        <p class="mt-6 font-body text-sm md:text-base text-muted/80 max-w-2xl leading-relaxed" data-fade data-fade-delay="3">
+          Jedes Werk steht als limitierter Fine Art Print zum Erwerb bereit.
+          Gedruckt auf Hahnemühle Photo Rag, signiert und nummeriert.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- GALERIE – 3-Spalten-Grid mit Lightbox                    -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="pb-24 md:pb-36 px-6 md:px-10" aria-label="Galerie" x-data="fineart()">
+
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Grid: 3 Spalten Desktop, 2 Tablet, 1 Mobile -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+          <!-- 01 – Portal -->
+          <div class="group cursor-pointer" @click="openLightbox(0)" data-fade>
+            <div class="overflow-hidden aspect-[4/3] bg-stone">
+              <img
+                src="assets/images/Fine%20Art/DSC_6472_neutral.jpg"
+                alt="Violettes Eingangstor in einer Industriebackstein-Fassade"
+                width="800" height="600"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              >
+            </div>
+            <div class="mt-4 flex items-baseline justify-between">
+              <h2 class="font-display font-bold text-lg text-ink leading-tight">Portal</h2>
+              <span class="font-display font-extrabold text-sm text-ink/15 select-none" aria-hidden="true">01</span>
+            </div>
+            <p class="font-body text-sm text-muted leading-relaxed mt-1">Ein Farbfeld hinter einer Industriefassade. Das Gewöhnliche wird zum Rahmen für das Unerwartete.</p>
+          </div>
+
+          <!-- 02 – Riviera -->
+          <div class="group cursor-pointer" @click="openLightbox(1)" data-fade data-fade-delay="1">
+            <div class="overflow-hidden aspect-[4/3] bg-stone">
+              <img
+                src="assets/images/Fine%20Art/750_3466_website.jpg"
+                alt="Luftaufnahme einer mediterranen Strandformation mit geometrischen Reihen orangefarbener Sonnenschirme"
+                width="800" height="600"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              >
+            </div>
+            <div class="mt-4 flex items-baseline justify-between">
+              <h2 class="font-display font-bold text-lg text-ink leading-tight">Riviera</h2>
+              <span class="font-display font-extrabold text-sm text-ink/15 select-none" aria-hidden="true">02</span>
+            </div>
+            <p class="font-body text-sm text-muted leading-relaxed mt-1">Geometrie des Sommers. Luftaufnahme einer mediterranen Strandformation – Ordnung, Farbe, Hitze.</p>
+          </div>
+
+          <!-- 03 – Spectrum -->
+          <div class="group cursor-pointer" @click="openLightbox(2)" data-fade data-fade-delay="2">
+            <div class="overflow-hidden aspect-[4/3] bg-stone">
+              <img
+                src="assets/images/Fine%20Art/_A1_4857%20Kopie.jpg"
+                alt="Farbiges Glas einer Café-Fassade wirft bunte Lichtreflexionen auf Stühle und Boden"
+                width="800" height="600"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              >
+            </div>
+            <div class="mt-4 flex items-baseline justify-between">
+              <h2 class="font-display font-bold text-lg text-ink leading-tight">Spectrum</h2>
+              <span class="font-display font-extrabold text-sm text-ink/15 select-none" aria-hidden="true">03</span>
+            </div>
+            <p class="font-body text-sm text-muted leading-relaxed mt-1">Licht bricht durch farbiges Glas und verwandelt einen alltäglichen Raum in eine Komposition aus Farbe und Reflexion.</p>
+          </div>
+
+          <!-- 04 – Biosphere -->
+          <div class="group cursor-pointer" @click="openLightbox(3)" data-fade>
+            <div class="overflow-hidden aspect-[4/3] bg-stone">
+              <img
+                src="assets/images/Fine%20Art/Miami_1609556.jpg"
+                alt="Spiegelglasfassade im Miami Design District reflektiert Palmen und eine geodätische Kuppelstruktur"
+                width="800" height="600"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              >
+            </div>
+            <div class="mt-4 flex items-baseline justify-between">
+              <h2 class="font-display font-bold text-lg text-ink leading-tight">Biosphere</h2>
+              <span class="font-display font-extrabold text-sm text-ink/15 select-none" aria-hidden="true">04</span>
+            </div>
+            <p class="font-body text-sm text-muted leading-relaxed mt-1">Architektur spiegelt Natur. Palmen, Glas und eine geodätische Struktur verschmelzen im Design District, Miami.</p>
+          </div>
+
+          <!-- 05 – The Observer -->
+          <div class="group cursor-pointer" @click="openLightbox(4)" data-fade data-fade-delay="1">
+            <div class="overflow-hidden aspect-[4/3] bg-stone">
+              <img
+                src="assets/images/Fine%20Art/DSC_5192.jpg"
+                alt="Frau mit Strohhut am Münzfernglas blickt aufs Meer an der kalifornischen Küste"
+                width="800" height="600"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              >
+            </div>
+            <div class="mt-4 flex items-baseline justify-between">
+              <h2 class="font-display font-bold text-lg text-ink leading-tight">The Observer</h2>
+              <span class="font-display font-extrabold text-sm text-ink/15 select-none" aria-hidden="true">05</span>
+            </div>
+            <p class="font-body text-sm text-muted leading-relaxed mt-1">Der Blick in die Ferne. Eine stille Szene zwischen Neugier und Kontemplation an der kalifornischen Küste.</p>
+          </div>
+
+        </div><!-- /grid -->
+
+      </div><!-- /max-w-6xl -->
+
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <!-- LIGHTBOX                                                 -->
+      <!-- ═══════════════════════════════════════════════════════ -->
+      <div
+        x-show="lightboxOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @keydown.escape.window="closeLightbox()"
+        @keydown.arrow-right.window="next()"
+        @keydown.arrow-left.window="prev()"
+        class="fixed inset-0 z-50 bg-ink/95 flex items-center justify-center"
+        role="dialog"
+        aria-modal="true"
+        style="display: none;"
+      >
+
+        <!-- Schließen -->
+        <button
+          @click="closeLightbox()"
+          class="absolute top-5 right-5 md:top-6 md:right-6 text-paper/50 hover:text-paper transition-colors z-10 p-2"
+          aria-label="Schließen"
+        >
+          <svg class="w-7 h-7 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- Prev -->
+        <button
+          @click="prev()"
+          x-show="activeIndex > 0"
+          class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 text-paper/40 hover:text-paper transition-colors z-10 p-2"
+          aria-label="Vorheriges Bild"
+        >
+          <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <!-- Next -->
+        <button
+          @click="next()"
+          x-show="activeIndex < works.length - 1"
+          class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 text-paper/40 hover:text-paper transition-colors z-10 p-2"
+          aria-label="Nächstes Bild"
+        >
+          <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Bild + Info -->
+        <!-- Äußerer Container: fix → kein Springen beim Bildwechsel -->
+        <div style="width:100%; max-width:800px; margin:0 auto; padding:0 3rem; display:flex; align-items:flex-start;">
+
+          <!-- Innerer Container: inline-flex → schrumpft auf Bildbreite -->
+          <div style="display:inline-flex; flex-direction:column; max-width:100%;">
+
+            <!-- Bild -->
+            <div class="relative">
+              <img
+                :src="works[activeIndex]?.src"
+                :alt="works[activeIndex]?.alt"
+                style="display:block; max-height:52vh; max-width:100%; width:auto;"
+                @load="onImgLoad($el)"
+              >
+              <!-- Wasserzeichen (ausgeblendet, bei Bedarf wieder aktivieren)
+              <div class="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+                <div style="position:absolute;inset:-60%;width:220%;height:220%;background-image:url('assets/images/SK_logo_schwarz.png');background-size:80px auto;background-repeat:repeat;opacity:0.06;mix-blend-mode:multiply;transform:rotate(-25deg);"></div>
+              </div>
+              -->
+            </div>
+
+            <!-- Info: Breite = gerenderte Bildbreite (via Alpine) -->
+            <div :style="'margin-top:1.5rem; overflow:hidden; width:' + (imgW ? imgW + 'px' : '100%') + ';'">
+              <h3 class="font-display font-bold text-paper"
+                  style="font-size:1.125rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"
+                  x-text="works[activeIndex]?.title"></h3>
+              <p class="font-body text-paper/50"
+                 style="font-size:0.875rem; margin-top:0.25rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"
+                 x-text="works[activeIndex]?.description"></p>
+              <a
+                :href="'mailto:kontakt@koenig-stefan.de?subject=' + works[activeIndex]?.subject"
+                class="inline-flex items-center gap-3 border border-paper/30
+                       text-paper font-body font-medium tracking-wide
+                       hover:bg-paper hover:text-ink transition-all duration-300"
+                style="margin-top:1rem; font-size:0.875rem; padding:0.875rem 1.5rem;"
+                @click.stop
+              >
+                Anfragen <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /lightbox -->
+
+    </section><!-- /galerie -->
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- ABSCHLUSS                                                -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="py-16 md:py-24 px-6 md:px-10" aria-label="Fine Art Prints">
+      <div class="max-w-6xl mx-auto border-t border-stone pt-10" data-fade>
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <p class="font-body text-base text-ink leading-relaxed">
+              Alle Arbeiten sind als limitierte Fine Art Prints erhältlich.
+            </p>
+            <p class="font-body text-sm text-muted mt-1">
+              Hahnemühle Photo Rag · Signiert · Nummeriert
+            </p>
+          </div>
+          <a
+            href="mailto:kontakt@koenig-stefan.de?subject=Anfrage%20Fine%20Art%20Prints"
+            class="inline-flex items-center justify-center gap-3 bg-ink text-paper font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-ink/80 transition-colors duration-300 shrink-0 w-full md:w-auto"
+          >
+            Allgemeine Anfrage <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink border-t border-paper/10 py-8 px-6 md:px-10" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-body text-sm text-paper/30">© <time datetime="2026">2026</time> Stefan G. König · SK Studio</p>
+      <nav aria-label="Rechtliches" class="flex items-center gap-6">
+        <a href="impressum.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Impressum</a>
+        <a href="datenschutz.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    function fineart() {
+      return {
+        lightboxOpen: false,
+        activeIndex: 0,
+        works: [
+          {
+            title: 'Portal',
+            description: 'Ein Farbfeld hinter einer Industriefassade. Das Gewöhnliche wird zum Rahmen für das Unerwartete.',
+            src: 'assets/images/Fine%20Art/DSC_6472_neutral.jpg',
+            alt: 'Violettes Eingangstor in einer Industriebackstein-Fassade',
+            subject: 'Anfrage%20Fine%20Art%20Print%3A%20Portal'
+          },
+          {
+            title: 'Riviera',
+            description: 'Geometrie des Sommers. Luftaufnahme einer mediterranen Strandformation – Ordnung, Farbe, Hitze.',
+            src: 'assets/images/Fine%20Art/750_3466_website.jpg',
+            alt: 'Luftaufnahme einer mediterranen Strandformation mit geometrischen Reihen orangefarbener Sonnenschirme',
+            subject: 'Anfrage%20Fine%20Art%20Print%3A%20Riviera'
+          },
+          {
+            title: 'Spectrum',
+            description: 'Licht bricht durch farbiges Glas und verwandelt einen alltäglichen Raum in eine Komposition aus Farbe und Reflexion.',
+            src: 'assets/images/Fine%20Art/_A1_4857%20Kopie.jpg',
+            alt: 'Farbiges Glas einer Café-Fassade wirft bunte Lichtreflexionen auf Stühle und Boden',
+            subject: 'Anfrage%20Fine%20Art%20Print%3A%20Spectrum'
+          },
+          {
+            title: 'Biosphere',
+            description: 'Architektur spiegelt Natur. Palmen, Glas und eine geodätische Struktur verschmelzen im Design District, Miami.',
+            src: 'assets/images/Fine%20Art/Miami_1609556.jpg',
+            alt: 'Spiegelglasfassade im Miami Design District reflektiert Palmen und eine geodätische Kuppelstruktur',
+            subject: 'Anfrage%20Fine%20Art%20Print%3A%20Biosphere'
+          },
+          {
+            title: 'The Observer',
+            description: 'Der Blick in die Ferne. Eine stille Szene zwischen Neugier und Kontemplation an der kalifornischen Küste.',
+            src: 'assets/images/Fine%20Art/DSC_5192.jpg',
+            alt: 'Frau mit Strohhut am Münzfernglas blickt aufs Meer an der kalifornischen Küste',
+            subject: 'Anfrage%20Fine%20Art%20Print%3A%20The%20Observer'
+          }
+        ],
+        imgW: 0,
+        openLightbox(index) {
+          this.activeIndex = index;
+          this.imgW = 0;
+          this.lightboxOpen = true;
+          document.body.style.overflow = 'hidden';
+        },
+        closeLightbox() {
+          this.lightboxOpen = false;
+          document.body.style.overflow = '';
+        },
+        next() {
+          if (this.activeIndex < this.works.length - 1) { this.activeIndex++; this.imgW = 0; }
+        },
+        prev() {
+          if (this.activeIndex > 0) { this.activeIndex--; this.imgW = 0; }
+        },
+        onImgLoad(el) {
+          this.imgW = el.offsetWidth;
+        }
+      };
+    }
+
+    // Rechtsklick auf Lightbox-Bilder deaktivieren
+    document.addEventListener('contextmenu', function(e) {
+      if (e.target.closest('[aria-modal="true"] img')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>

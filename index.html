@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!--
+  ═══════════════════════════════════════════════════════
+  SK STUDIO – DESIGN-SYSTEM
+  ═══════════════════════════════════════════════════════
+
+  BRANCHE & ZIELGRUPPE
+  Markenberater und kreativer Umsetzer, München.
+  Zielgruppe: Marketingverantwortliche in mittelständischen
+  und Großunternehmen. Mandanten via Empfehlung oder SEO.
+
+  STIMMUNG
+  Ruhige Autorität. Keine Floskeln, keine Superlative.
+  Jedes Element ist Ergebnis einer Entscheidung, kein Zufall.
+
+  DESIGNPRINZIP: „Logische Konsequenz"
+  Drei-Säulen-Struktur als Kompositionsprinzip:
+  Strategische Empathie → Analytische Klarheit → Multidisziplinäres Handwerk
+
+  FARBPALETTE
+  ink:   #0a0a0a   Primär (fast Schwarz)
+  paper: #f9f8f6   Hintergrund (warmes Weiß)
+  stone: #e8e4de   Akzent (warmes Cremegrau)
+  muted: #8a8580   Sekundärtext (warm Grau)
+
+  TYPOGRAFIE (3 Ebenen)
+  Ebene 1 – Haltung:  Plus Jakarta Sans 800 → große Headlines, Aussagen
+  Ebene 2 – Struktur: Plus Jakarta Sans 600 → Zwischentitel, orientierend
+  Ebene 3 – Substanz: Plus Jakarta Sans 300–400 → Fließtext, jeder Satz trägt Gewicht
+
+  TONALITÄT
+  Siezen (Ihr/Sie) – konsistent. Kein Agentur-Jargon.
+  Claim „Mitdenken, erkennen, lösen." bleibt roter Faden.
+  ═══════════════════════════════════════════════════════
+-->
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK Studio – Stefan G. König | Markenberater München</title>
+  <meta name="description" content="Stefan G. König – Markenberater und kreativer Umsetzer in München. Strategische Kommunikation, Fotografie, Videografie und Konzeption für Marktführer wie BMW, Aral und Warema. Seit 2013 selbstständig.">
+  <meta name="author" content="Stefan G. König">
+  <link rel="canonical" href="https://sk-studio.de/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sk-studio.de/">
+  <meta property="og:title" content="SK Studio – Stefan G. König | Kommunikationsstratege München">
+  <meta property="og:description" content="Freelance-Kommunikationsstratege in München. Strategische Kommunikation, Konzeption und Kreation für Marktführer seit 2013.">
+  <meta property="og:locale" content="de_DE">
+
+  <!-- Font: Plus Jakarta Sans (Calibre-Ersatz, alle Gewichte) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Compiled CSS (npm run build → assets/output.css) -->
+  <link rel="stylesheet" href="assets/output.css">
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://sk-studio.de/#stefan",
+    "name": "Stefan G. König",
+    "jobTitle": "Kommunikationsstratege",
+    "url": "https://sk-studio.de",
+    "email": "kontakt@koenig-stefan.de",
+    "telephone": "+49-89-71673624",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Elsenheimerstr. 24",
+      "addressLocality": "München",
+      "postalCode": "80687",
+      "addressCountry": "DE"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Ludwig-Maximilians-Universität München"
+    },
+    "knowsAbout": [
+      "Strategische Kommunikation",
+      "Pharma & Health Communication",
+      "Konzeption & Kreation",
+      "Fotografie",
+      "Videoproduktion",
+      "Grafikdesign"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://sk-studio.de/#organization",
+      "name": "SK Studio",
+      "url": "https://sk-studio.de",
+      "vatID": "DE286845570"
+    }
+  }
+  </script>
+</head>
+
+<body class="font-body bg-paper text-ink antialiased">
+
+  <!-- Skip Link -->
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:text-sm focus:rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- HEADER                                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <header
+    class="fixed top-0 left-0 right-0 z-40 bg-transparent border-b border-transparent backdrop-blur-sm transition-colors duration-300"
+    x-data="{ open: false }"
+  >
+  <div class="px-6 md:px-10">
+    <nav
+      class="max-w-6xl mx-auto flex items-center justify-between h-16"
+      aria-label="Hauptnavigation"
+    >
+      <!-- Logo -->
+      <a href="#" aria-label="SK Studio – zur Startseite" class="flex items-center">
+        <img
+          src="assets/images/SK_logo_schwarz.png"
+          alt="SK Studio"
+          width="40"
+          height="30"
+          id="header-logo"
+          class="h-8 w-auto transition-all duration-300"
+         
+        >
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex items-center gap-6" role="list">
+        <li><a href="fotografie.html"  class="nav-link font-body text-sm tracking-wide transition-colors duration-300">Fotografie</a></li>
+        <li><a href="videografie.html" class="nav-link font-body text-sm tracking-wide transition-colors duration-300">Videografie</a></li>
+        <li><a href="fine-art.html"    class="nav-link font-body text-sm tracking-wide transition-colors duration-300">Fine Art</a></li>
+        <li><a href="ueber-mich.html"  class="nav-link font-body text-sm tracking-wide transition-colors duration-300">Über Mich</a></li>
+        <li>
+          <a href="#kontakt" class="nav-cta font-body text-sm px-5 py-2 border transition-all duration-300 tracking-wide ml-2">
+            Kontakt
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Burger -->
+      <button
+        @click="open = !open"
+        id="burger"
+        class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+        :aria-expanded="open"
+        aria-label="Menü öffnen"
+      >
+        <span class="burger-bar block w-6 h-px transition-all duration-300 origin-center"
+              :class="open ? 'rotate-45 translate-y-[6px]' : ''"></span>
+        <span class="burger-bar block w-6 h-px transition-all duration-300"
+              :class="open ? 'opacity-0' : ''"></span>
+        <span class="burger-bar block w-6 h-px transition-all duration-300 origin-center"
+              :class="open ? '-rotate-45 -translate-y-[6px]' : ''"></span>
+      </button>
+    </nav>
+  </div>
+
+    <!-- Mobile Menu -->
+    <div
+      x-show="open"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 translate-y-0"
+      x-transition:leave-end="opacity-0 -translate-y-2"
+      @click.away="open = false"
+      class="md:hidden bg-paper border-t border-stone px-6 py-8"
+    >
+      <ul class="flex flex-col gap-6" role="list">
+        <li><a href="fotografie.html"  @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fotografie</a></li>
+        <li><a href="videografie.html" @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Videografie</a></li>
+        <li><a href="fine-art.html"    @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fine Art</a></li>
+        <li><a href="ueber-mich.html"  @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Über Mich</a></li>
+        <li><a href="#kontakt"         @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- HERO                                                    -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section
+      id="hero"
+      class="relative min-h-[100svh] flex flex-col justify-center overflow-hidden"
+      aria-label="Einleitung"
+    >
+
+      <!-- Video Background -->
+      <video
+        id="hero-video"
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="assets/images/hero-poster.jpg"
+        aria-hidden="true"
+        style="object-position: center 20%;"
+      >
+        <source src="assets/videos/SK_Portrait_low.mp4" type="video/mp4">
+      </video>
+
+      <!-- Dark Overlay -->
+      <div class="absolute inset-0 bg-ink/65"></div>
+
+      <!-- Hero-Inhalt -->
+      <div class="relative z-10 pt-16 px-6 md:px-10">
+        <div class="max-w-6xl mx-auto w-full pt-4 pb-10 md:pt-6 md:pb-12 text-left">
+
+          <p class="section-label text-stone/70 mb-6 md:mb-8" data-fade>
+            Kommunikationsstratege · München · Seit&nbsp;2013
+          </p>
+
+          <!-- Hauptheadline -->
+          <h1
+            class="font-display font-extrabold leading-[0.88] tracking-tight text-paper"
+            style="font-size: clamp(3rem, 7vw, 7rem); margin-left: -5px;"
+            data-fade data-fade-delay="1"
+          >
+            Mitdenken.<br>
+            Erkennen.<br>
+            Lösen.
+          </h1>
+
+          <!-- Subtext -->
+          <p
+            class="mt-6 md:mt-8 max-w-lg font-body font-light text-lg md:text-xl text-paper/70 leading-relaxed"
+            data-fade data-fade-delay="2"
+          >
+            Strategische Kommunikation, die wirkt. Konzeption, Kreation und Umsetzung – von der Idee bis zum fertigen Asset. Alles aus einer Hand.
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-16 md:mt-20 flex flex-col sm:flex-row items-start sm:items-center gap-4" data-fade data-fade-delay="3">
+            <a
+              href="#kontakt"
+              class="inline-flex items-center gap-3 bg-paper text-ink font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-stone transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-paper"
+            >
+              Kontakt aufnehmen <span aria-hidden="true">→</span>
+            </a>
+            <a href="#leistungen" class="font-body text-sm text-stone/60 hover:text-paper transition-colors duration-300 tracking-wide">
+              Leistungen entdecken
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- LEISTUNGEN – STICKY SCROLL                              -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section
+      id="leistungen"
+      class="bg-stone relative h-[300vh] md:h-[300vh]"
+      aria-labelledby="leistungen-h2"
+    >
+      <div class="sticky top-0 h-screen overflow-hidden bg-stone px-6 md:px-10">
+        <div class="max-w-6xl mx-auto pt-24 md:pt-36">
+
+          <!-- Header (immer sichtbar) -->
+          <div class="mb-16 md:mb-20" data-fade>
+            <p class="section-label mb-6">Was ich tue</p>
+            <h2
+              id="leistungen-h2"
+              class="font-display font-extrabold leading-[0.92] tracking-tight text-ink"
+              style="font-size: clamp(2.5rem, 6vw, 5.5rem);"
+            >
+              Aus der Marke heraus.
+            </h2>
+          </div>
+
+          <!-- Steps-Wrapper -->
+          <div class="leistungen-wrapper relative" style="height: calc(100vh - 340px);">
+
+            <!-- Step 1: Strategische Empathie -->
+            <div class="leistung-step is-active" data-step="0">
+              <div class="leistung-content w-full py-10 md:py-14 grid grid-cols-1 md:grid-cols-[6rem_1fr_1fr] gap-6 md:gap-12 items-start">
+                <span
+                  class="leistung-number font-display font-extrabold text-ink leading-none select-none"
+                  style="font-size: clamp(3rem, 6vw, 5rem);"
+                  aria-hidden="true"
+                >01</span>
+                <div>
+                  <h3 class="font-display font-bold text-2xl md:text-3xl text-ink mb-3 leading-tight">
+                    Strategische<br>Empathie
+                  </h3>
+                  <p class="font-body text-sm text-muted leading-relaxed max-w-[350px]">
+                    Ich höre genau zu und stelle die richtigen Fragen, um Ihre Ziele tiefgreifend zu verstehen.
+                  </p>
+                </div>
+                <ul class="space-y-2 md:pt-1">
+                  <li class="font-body text-sm text-ink">Markenberatung</li>
+                  <li class="font-body text-sm text-ink">Konzeption</li>
+                  <li class="font-body text-sm text-ink">Briefing-Analyse</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Step 2: Analytische Klarheit -->
+            <div class="leistung-step" data-step="1">
+              <div class="leistung-content w-full py-10 md:py-14 grid grid-cols-1 md:grid-cols-[6rem_1fr_1fr] gap-6 md:gap-12 items-start">
+                <span
+                  class="leistung-number font-display font-extrabold text-ink leading-none select-none"
+                  style="font-size: clamp(3rem, 6vw, 5rem);"
+                  aria-hidden="true"
+                >02</span>
+                <div>
+                  <h3 class="font-display font-bold text-2xl md:text-3xl text-ink mb-3 leading-tight">
+                    Analytische<br>Klarheit
+                  </h3>
+                  <p class="font-body text-sm text-muted leading-relaxed max-w-[350px]">
+                    Ich erkenne die eigentliche Herausforderung und erarbeite die passende kommunikative Lösung.
+                  </p>
+                </div>
+                <ul class="space-y-2 md:pt-1">
+                  <li class="font-body text-sm text-ink">Kommunikationsstrategie</li>
+                  <li class="font-body text-sm text-ink">Botschaftsentwicklung</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Step 3: Multidisziplinäres Handwerk -->
+            <div class="leistung-step" data-step="2">
+              <div class="leistung-content w-full py-10 md:py-14 grid grid-cols-1 md:grid-cols-[6rem_1fr_1fr] gap-6 md:gap-12 items-start">
+                <span
+                  class="leistung-number font-display font-extrabold text-ink leading-none select-none"
+                  style="font-size: clamp(3rem, 6vw, 5rem);"
+                  aria-hidden="true"
+                >03</span>
+                <div>
+                  <h3 class="font-display font-bold text-2xl md:text-3xl text-ink mb-3 leading-tight">
+                    Multidisziplinäres<br>Handwerk
+                  </h3>
+                  <p class="font-body text-sm text-muted leading-relaxed max-w-[350px]">
+                    Ich setze Ihre Lösung in exzellenter Content Creation um – von Foto und Video bis hin zu Text und Design.
+                  </p>
+                </div>
+                <ul class="space-y-2 md:pt-1">
+                  <li class="font-body text-sm">
+                    <a href="fotografie.html" class="text-ink hover:text-muted transition-colors duration-200 inline-flex items-center gap-2">
+                      Fotografie <span class="text-muted text-xs" aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                  <li class="font-body text-sm">
+                    <a href="videografie.html" class="text-ink hover:text-muted transition-colors duration-200 inline-flex items-center gap-2">
+                      Videografie <span class="text-muted text-xs" aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                  <li class="font-body text-sm">
+                    <a href="fine-art.html" class="text-ink hover:text-muted transition-colors duration-200 inline-flex items-center gap-2">
+                      Fine Art <span class="text-muted text-xs" aria-hidden="true">↗</span>
+                    </a>
+                  </li>
+                  <li class="font-body text-sm text-ink">Animation</li>
+                  <li class="font-body text-sm text-ink">Text & Design</li>
+                </ul>
+              </div>
+            </div>
+
+
+          <!-- Progress-Indicator -->
+          <div class="absolute bottom-16 left-0 right-0 flex items-center justify-center gap-4" aria-hidden="true">
+            <div class="flex items-center gap-1.5">
+              <div class="leistung-dot h-0.5 rounded-full transition-all duration-300" style="width:24px; background-color:#0a0a0a;"></div>
+              <div class="leistung-dot h-0.5 rounded-full transition-all duration-300" style="width:8px; background-color:#0a0a0a; opacity:0.2;"></div>
+              <div class="leistung-dot h-0.5 rounded-full transition-all duration-300" style="width:8px; background-color:#0a0a0a; opacity:0.2;"></div>
+            </div>
+            <span id="leistung-counter" class="text-xs text-muted tracking-[0.15em] uppercase font-medium">01 / 03</span>
+          </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- ÜBER MICH – TEASER                                      -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section
+      id="ueber"
+      class="py-24 md:py-36 px-6 md:px-10"
+      aria-labelledby="ueber-h2"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+
+          <!-- Foto -->
+          <div data-fade class="overflow-hidden">
+            <img
+              src="assets/images/stefan.jpeg"
+              alt="Stefan G. König – Markenberater, München"
+              width="800"
+              height="1067"
+              loading="lazy"
+              class="w-full max-w-sm mx-auto md:max-w-none object-cover grayscale"
+              style="margin-top: -15%; display: block;"
+            >
+          </div>
+
+          <!-- Teaser -->
+          <div data-fade data-fade-delay="1">
+            <p class="section-label mb-6">Über mich</p>
+            <h2
+              id="ueber-h2"
+              class="font-display font-extrabold leading-[0.92] tracking-tight text-ink mb-8"
+              style="font-size: clamp(1.8rem, 4vw, 3rem);"
+            >
+              Markenberater.<br>Kreativer Umsetzer.<br>Münchner.
+            </h2>
+            <p class="font-body text-base md:text-lg text-ink/75 leading-relaxed mb-10">
+              Als Markenberater und kreativer Umsetzer in München arbeite ich aus der Marke heraus. Ich verstehe mich als strategischer Dienstleister, der die handwerklichen Gewerke auf ein fundiertes akademisches Konstrukt setzt.
+            </p>
+            <a
+              href="ueber-mich.html"
+              class="inline-flex items-center gap-2 font-body text-sm font-medium text-ink border-b border-ink pb-0.5 hover:text-muted hover:border-muted transition-colors duration-300"
+            >
+              Mehr über mich <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- REFERENZEN                                              -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section
+      id="referenzen"
+      class="bg-stone py-24 md:py-36 px-6 md:px-10"
+      aria-labelledby="referenzen-h2"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Label + Headline + Subline -->
+        <div class="mb-16 md:mb-20" data-fade>
+          <p class="section-label mb-6">Referenzen</p>
+          <h2
+            id="referenzen-h2"
+            class="font-display font-extrabold leading-[0.92] tracking-tight text-ink"
+            style="font-size: clamp(2rem, 5vw, 4.5rem);"
+          >
+            Vertrauen, das wächst.
+          </h2>
+          <p class="font-body font-light text-base md:text-lg text-muted mt-8 leading-relaxed">
+            Langfristige Partnerschaften. Unterschiedliche Branchen. Ein Anspruch.
+          </p>
+        </div>
+
+        <!-- Intro -->
+        <div class="max-w-2xl mb-16 md:mb-20 space-y-4" data-fade>
+          <p class="font-body text-base md:text-lg text-ink/80 leading-relaxed">
+            Stefan König arbeitet seit 2013 als unabhängiger Markenberater und kreativer Umsetzer in München. Zu seinen Kunden zählen Marktführer aus Industrie, Medien, Energie und dem Gesundheitssektor.
+          </p>
+          <p class="font-body text-base text-ink/65 leading-relaxed">
+            Viele Partnerschaften bestehen seit Jahren – ein Zeichen dafür, dass Kommunikation nicht nur funktioniert, sondern wirkt.
+          </p>
+        </div>
+
+        <!-- Referenzliste – 3 Spalten -->
+        <div class="grid grid-cols-1 md:grid-cols-3" data-fade data-fade-delay="1">
+
+          <!-- Spalte 1: Wirtschaft & Industrie -->
+          <div class="pt-8 md:pt-10 pr-8 md:pr-10 pb-8 md:pb-10 flex flex-col">
+            <div class="min-h-[15rem]">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-6">Wirtschaft &amp; Industrie</p>
+              <ul class="space-y-0" role="list">
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">BMW Group / BMW Welt</span>
+                  <span class="font-body text-sm text-muted">Konzeption &amp; Kommunikation</span>
+                </li>
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Warema SE</span>
+                  <span class="font-body text-sm text-muted">Markenkommunikation</span>
+                </li>
+                <li class="py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">bayme vbm / vbw</span>
+                  <span class="font-body text-sm text-muted">Verbandskommunikation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Spalte 2: Medien & Travel -->
+          <div class="pt-8 md:pt-10 px-4 md:px-5 pb-8 md:pb-10 flex flex-col">
+            <div class="min-h-[15rem]">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-6">Medien &amp; Travel</p>
+              <ul class="space-y-0" role="list">
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Hitradio RT1</span>
+                  <span class="font-body text-sm text-muted">Redaktion &amp; Content</span>
+                </li>
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Radiozentrale</span>
+                  <span class="font-body text-sm text-muted">Mediakommunikation</span>
+                </li>
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Werben &amp; Verkaufen</span>
+                  <span class="font-body text-sm text-muted">Fachmedien (bis 2020)</span>
+                </li>
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">BernerTravel</span>
+                  <span class="font-body text-sm text-muted">Markenkommunikation</span>
+                </li>
+                <li class="py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Lufthansa</span>
+                  <span class="font-body text-sm text-muted">bis 2019</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Spalte 3: Energie & Health -->
+          <div class="pt-8 md:pt-10 px-8 md:px-10 pb-8 md:pb-10 flex flex-col" style="padding-right: 0;">
+            <div class="min-h-[15rem]">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-6">Energie &amp; Health</p>
+              <ul class="space-y-0" role="list">
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Aral / BP</span>
+                  <span class="font-body text-sm text-muted">Kampagnenkommunikation</span>
+                </li>
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Sandoz / Novartis</span>
+                  <span class="font-body text-sm text-muted">Interne Kommunikation (bis 2022)</span>
+                </li>
+                <li class="border-b border-ink/10 py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Heel</span>
+                  <span class="font-body text-sm text-muted">Fachkommunikation</span>
+                </li>
+                <li class="py-5">
+                  <span class="font-display font-semibold text-ink text-lg block leading-snug">Retterspitz</span>
+                  <span class="font-body text-sm text-muted">Endkundenkommunikation</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Abschluss-Zeile -->
+        <div class="border-t border-ink/10 pt-8 mt-16" data-fade>
+          <p class="text-xs text-muted tracking-wide">Ausgewählte Referenzen. Vollständige Kundenliste auf Anfrage.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- KONTAKT                                                 -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section
+      id="kontakt"
+      class="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden scroll-mt-16"
+      aria-labelledby="kontakt-h2"
+    >
+      <img
+        src="assets/images/DSC_6472_neutral.jpg"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        loading="lazy"
+      >
+      <div class="absolute inset-0 bg-ink/80 backdrop-blur-sm"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto">
+
+        <div class="mb-16 md:mb-20" data-fade>
+          <p class="font-body text-xs tracking-[0.25em] uppercase text-paper/50 mb-6">Kontakt</p>
+          <h2
+            id="kontakt-h2"
+            class="font-display font-extrabold leading-[0.92] tracking-tight text-paper"
+            style="font-size: clamp(2.5rem, 6vw, 5.5rem);"
+          >
+            Sprechen wir.
+          </h2>
+        </div>
+
+        <p class="font-body text-base md:text-lg text-paper leading-relaxed max-w-2xl mb-16 md:mb-20" data-fade>
+          Ich freue mich über Anfragen aller Art – ob konkretes Projekt,
+          strategische Beratung oder ein erstes Gespräch ohne Agenda.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2" data-fade>
+          <address class="not-italic py-8 sm:pr-12">
+            <p class="font-body text-xs tracking-[0.2em] uppercase text-paper/50 mb-3">E-Mail</p>
+            <a
+              href="mailto:kontakt@koenig-stefan.de"
+              class="font-display font-semibold text-paper text-lg md:text-xl hover:text-stone transition-colors duration-300"
+            >
+              kontakt@koenig-stefan.de
+            </a>
+            <div class="mt-6">
+              <a
+                href="mailto:kontakt@koenig-stefan.de"
+                class="inline-flex items-center gap-3 bg-transparent border border-paper text-paper font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-paper/10 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-paper"
+              >
+                E-Mail schreiben <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </address>
+          <address class="not-italic py-8 sm:pl-12">
+            <p class="font-body text-xs tracking-[0.2em] uppercase text-paper/50 mb-3">Adresse</p>
+            <p class="font-body text-paper leading-relaxed">
+              SK Studio – Stefan G. König<br>
+              Elsenheimerstr. 24<br>
+              80687 München
+            </p>
+          </address>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FOOTER                                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="bg-paper border-t border-ink/10 py-8 px-6 md:px-10" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-body text-sm text-ink/40">
+        © <time datetime="2026">2026</time> Stefan G. König · SK Studio
+      </p>
+      <nav aria-label="Rechtliches" class="flex items-center gap-6">
+        <a href="impressum.html" class="font-body text-sm text-ink/40 hover:text-ink transition-colors duration-300">Impressum</a>
+        <a href="datenschutz.html" class="font-body text-sm text-ink/40 hover:text-ink transition-colors duration-300">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

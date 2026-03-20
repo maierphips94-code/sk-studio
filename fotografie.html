@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotografie – Stefan G. König | SK Studio München</title>
+  <meta name="description" content="Corporate Photography, Produkt- und Eventfotografie. Die Kamera folgt der Strategie. Stefan G. König, München.">
+  <link rel="canonical" href="https://sk-studio.de/fotografie.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/output.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+
+  <style>
+    /* ── Foto-Coverflow Carousel ──────────────────── */
+    .cf-wrap {
+      position: relative;
+      height: 300px;
+    }
+    @media (min-width: 768px) {
+      .cf-wrap { height: 400px; }
+    }
+    @media (min-width: 1024px) {
+      .cf-wrap { height: 480px; }
+    }
+    .cf-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(560px, 80vw);
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform, opacity;
+    }
+    .cf-item.cf-active {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+    .cf-item.cf-active > .cf-card {
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+    .cf-item.cf-left {
+      transform: translate(calc(-50% - min(480px, 68vw)), -50%) scale(0.85);
+      opacity: 0.3;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .cf-item.cf-right {
+      transform: translate(calc(-50% + min(480px, 68vw)), -50%) scale(0.85);
+      opacity: 0.3;
+      z-index: 2;
+      cursor: pointer;
+    }
+    .cf-item.cf-hidden {
+      transform: translate(-50%, -50%) scale(0.7);
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .cf-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f8f6;
+      border: 1px solid rgba(10, 10, 10, 0.12);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      color: #0a0a0a;
+    }
+    .cf-btn:hover {
+      background: #0a0a0a;
+      border-color: #0a0a0a;
+      color: #f9f8f6;
+    }
+    .cf-btn-prev { left: 0; }
+    .cf-btn-next { right: 0; }
+    @media (max-width: 640px) {
+      .cf-item.cf-left,
+      .cf-item.cf-right {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .cf-btn-prev { left: 4px; }
+      .cf-btn-next { right: 4px; }
+    }
+  </style>
+</head>
+
+<body class="font-body bg-paper text-ink antialiased">
+
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:text-sm focus:rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-stone transition-colors duration-300" x-data="{ open: false }">
+  <div class="px-6 md:px-10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between h-16" aria-label="Hauptnavigation">
+
+      <a href="index.html" aria-label="SK Studio – zur Startseite" class="flex items-center">
+        <img src="assets/images/SK_logo_schwarz.png" alt="SK Studio" width="40" height="30" class="h-8 w-auto">
+      </a>
+
+      <ul class="hidden md:flex items-center gap-6" role="list">
+        <li><a href="fotografie.html"  class="font-body text-sm text-ink font-medium tracking-wide border-b border-ink pb-0.5" aria-current="page">Fotografie</a></li>
+        <li><a href="videografie.html" class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Videografie</a></li>
+        <li><a href="fine-art.html"    class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fine Art</a></li>
+        <li><a href="ueber-mich.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Über Mich</a></li>
+        <li>
+          <a href="index.html#kontakt" class="font-body text-sm px-5 py-2 border border-ink text-ink hover:bg-ink hover:text-paper transition-all duration-300 tracking-wide ml-2">
+            Kontakt
+          </a>
+        </li>
+      </ul>
+
+      <button @click="open = !open" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]" :aria-expanded="open" aria-label="Menü öffnen">
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-[6px]' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-[6px]' : ''"></span>
+      </button>
+    </nav>
+  </div>
+
+    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" @click.away="open = false" class="md:hidden bg-paper border-t border-stone px-6 py-8">
+      <ul class="flex flex-col gap-6" role="list">
+        <li><a href="fotografie.html"       @click="open = false" class="font-body text-xl text-ink font-medium">Fotografie</a></li>
+        <li><a href="videografie.html"      @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Videografie</a></li>
+        <li><a href="fine-art.html"         @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fine Art</a></li>
+        <li><a href="ueber-mich.html"       @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Über Mich</a></li>
+        <li><a href="index.html#kontakt"    @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="content" class="pt-16">
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- HERO                                                     -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="pt-10 pb-24 md:pt-14 md:pb-32 px-6 md:px-10" aria-label="Fotografie">
+      <div class="max-w-6xl mx-auto">
+        <p class="section-label mb-10" data-fade>Multidisziplinäres Handwerk · 01</p>
+        <h1
+          class="font-display font-extrabold leading-[0.88] tracking-tight text-ink"
+          style="font-size: clamp(4rem, 12vw, 11rem); margin-left: -10px;"
+          data-fade data-fade-delay="1"
+        >
+          Fotografie.
+        </h1>
+        <p class="font-body text-lg md:text-xl text-muted max-w-xl leading-relaxed" style="margin-top: 100px;" data-fade data-fade-delay="2">
+          Jedes Bild ist die logische Konsequenz Ihrer Markenstrategie.
+        </p>
+        <p class="mt-6 font-body text-sm md:text-base text-muted/80 max-w-2xl leading-relaxed" data-fade data-fade-delay="3">
+          Ob Corporate Photography, Produkt- oder Eventfotografie – die Kamera
+          folgt der Strategie, nicht dem Zufall. Jede Kategorie zeigt einen
+          Ausschnitt meiner Arbeit.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- PORTFOLIO – Kategorie-Filter + Karussell                 -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section
+      class="pb-24 md:pb-36 px-6 md:px-10 overflow-hidden"
+      aria-label="Portfolio"
+      x-data="fotoPortfolio()"
+    >
+      <div class="max-w-6xl mx-auto">
+
+        <!-- Kategorie-Filter -->
+        <div class="mb-12 md:mb-16" data-fade>
+          <div class="flex flex-wrap gap-3 md:gap-4">
+            <template x-for="(cat, key) in categories" :key="key">
+              <button
+                @click="switchCategory(key)"
+                class="px-6 py-3 rounded-full border font-body text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+                :class="activeCategory === key
+                  ? 'bg-ink text-paper border-ink'
+                  : 'bg-transparent text-muted border-ink/25 hover:border-ink hover:text-ink'"
+                x-text="cat.label"
+              ></button>
+            </template>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Karussell (bewusst außerhalb max-w-6xl für volle Breite) -->
+      <div class="max-w-6xl mx-auto relative px-14">
+
+        <!-- Coverflow Track -->
+        <div class="cf-wrap">
+          <template x-for="(img, i) in images" :key="activeCategory + '-' + i">
+            <div
+              class="cf-item"
+              :class="cls(i)"
+              @click="if(pos(i) !== 0) go(pos(i))"
+            >
+              <div class="cf-card overflow-hidden bg-stone" style="aspect-ratio: 4/3;">
+                <template x-if="img.placeholder">
+                  <div class="w-full h-full bg-neutral-200 flex items-center justify-center">
+                    <span
+                      class="font-body text-sm text-muted/40 select-none tracking-wide"
+                      x-text="categories[activeCategory].label + ' · ' + (i + 1)"
+                    ></span>
+                  </div>
+                </template>
+                <template x-if="!img.placeholder">
+                  <img
+                    :src="img.src"
+                    :alt="img.alt"
+                    :style="'object-position:' + img.objPos"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  >
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Pfeil-Navigation -->
+        <button @click="go(-1)" class="cf-btn cf-btn-prev" aria-label="Vorheriges Bild">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button @click="go(1)" class="cf-btn cf-btn-next" aria-label="Nächstes Bild">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+
+        <!-- Dots-Navigation -->
+        <div class="flex justify-center gap-2 mt-8" aria-label="Bildnavigation">
+          <template x-for="(img, i) in images" :key="'dot-' + i">
+            <button
+              @click="cur = i"
+              :class="cur === i ? 'bg-ink w-6' : 'bg-ink/20 w-2 hover:bg-ink/40'"
+              class="h-1.5 rounded-full transition-all duration-300"
+              :aria-label="'Bild ' + (i + 1)"
+            ></button>
+          </template>
+        </div>
+
+      </div>
+
+      <!-- Portfolio-Hinweis -->
+      <div class="max-w-6xl mx-auto text-center" style="margin-top: 80px;" data-fade>
+        <p class="font-body text-sm text-muted mb-4">
+          Vollständige Portfolios der einzelnen Kategorien auf Anfrage.
+        </p>
+        <a
+          href="mailto:kontakt@koenig-stefan.de?subject=Anfrage%20Fotografie-Portfolio"
+          class="inline-flex items-center gap-2 font-body text-sm font-medium
+                 text-ink border-b border-ink pb-0.5 hover:text-muted
+                 hover:border-muted transition-colors duration-300"
+        >
+          Portfolio anfragen <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- CTA                                                      -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="bg-ink py-24 md:py-32 px-6 md:px-10" aria-label="Kontakt">
+      <div class="max-w-6xl mx-auto" data-fade>
+        <p class="section-label text-stone/50 mb-6">Sie haben ein Projekt?</p>
+        <h2
+          class="font-display font-extrabold leading-[0.92] tracking-tight text-paper mb-12"
+          style="font-size: clamp(2rem, 5vw, 4.5rem);"
+        >
+          Kontakt aufnehmen.
+        </h2>
+        <a
+          href="mailto:kontakt@koenig-stefan.de"
+          class="inline-flex items-center gap-3 bg-paper text-ink font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-stone transition-colors duration-300"
+        >
+          Kontakt aufnehmen <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-ink border-t border-paper/10 py-8 px-6 md:px-10" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-body text-sm text-paper/30">© <time datetime="2026">2026</time> Stefan G. König · SK Studio</p>
+      <nav aria-label="Rechtliches" class="flex items-center gap-6">
+        <a href="impressum.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Impressum</a>
+        <a href="datenschutz.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    function fotoPortfolio() {
+      return {
+        activeCategory: 'automobil',
+        cur: 0,
+
+        categories: {
+          automobil: {
+            label: 'Automobil',
+            number: '01',
+            images: [
+              { src: 'assets/images/Automobil/A1_00674.jpg',              alt: 'BMW iX2 mit dramatischen Lichtstrahlen',                    placeholder: false, objPos: 'center 60%'  },
+              { src: 'assets/images/Automobil/16_BMW-Welt_2023-08_.jpg',   alt: 'BMW M3 Touring im Parkhaus, cinematische Stimmung',            placeholder: false, objPos: 'right center' },
+              { src: 'assets/images/Automobil/BMW-Welt_03-2021_01780.jpg', alt: 'BMW Z4 in der BMW Welt München',                               placeholder: false, objPos: 'center 65%'  },
+              { src: 'assets/images/Automobil/DSC03030.jpg',               alt: 'BMW i7 vor farbiger Fassade im Kunstviertel',                  placeholder: false, objPos: 'center center'}
+            ]
+          },
+          portrait: {
+            label: 'Portrait',
+            number: '02',
+            images: [
+              { src: 'assets/images/Portrait/BobbieBraeuer.jpg',                alt: 'Koch mit Glasreflexion, stimmungsvolles Portrait',         placeholder: false, objPos: 'left top'     },
+              { src: 'assets/images/Portrait/DSC02539.jpg',                     alt: 'Frau auf Treppe, natürliches Außenlicht',                 placeholder: false, objPos: 'center 35%'   },
+              { src: 'assets/images/Portrait/DSC03706.jpg',                     alt: 'Frau lachend auf Treppe, natürliches Bokeh',              placeholder: false, objPos: 'center 5%'    },
+              { src: 'assets/images/Portrait/08_BMW-Welt_2022-09_08848.jpg',    alt: 'Mann in Küche, Available-Light-Portrait',                 placeholder: false, objPos: 'center 5%'    }
+            ]
+          },
+          architektur: {
+            label: 'Architektur',
+            number: '03',
+            images: [
+              { src: 'assets/images/Architektur/DSC_5141.jpg',                               alt: 'BMW Turm bei Nacht, blaue Lichtstimmung',             placeholder: false, objPos: 'center center'},
+              { src: 'assets/images/Architektur/A1_07816 Kopie.jpg',                         alt: 'BMW Welt im Schnee mit Olympiaturm',                  placeholder: false, objPos: 'center top'   },
+              { src: 'assets/images/Architektur/09_BMW-Museum_Projektion_2021-05_06803.jpg',  alt: 'BMW Museum mit Lichtprojektion',                      placeholder: false, objPos: 'right center' },
+              { src: 'assets/images/Architektur/BMW240703_StefanGKoenig_4239_B.jpg',         alt: 'Sanitäter in moderner Architekturhalle',              placeholder: false, objPos: 'left top'     }
+            ]
+          },
+          event: {
+            label: 'Event',
+            number: '04',
+            images: [
+              { src: 'assets/images/Event/_A1_9119.jpg',                    alt: 'DJ-Set mit Neon-Lichtern auf der Bühne',                       placeholder: false, objPos: 'center 40%'   },
+              { src: 'assets/images/Event/DSC01214.jpg',                    alt: 'Event-Terrasse der BMW Welt bei Nacht aus der Vogelperspektive',placeholder: false, objPos: 'center center'},
+              { src: 'assets/images/Event/DSC03099.jpg',                    alt: 'Mann winkt freudig auf einer Veranstaltung',                   placeholder: false, objPos: '60% top'     },
+              { src: 'assets/images/Event/DSC02052.jpg',                    alt: 'Outdoor-Festival mit Olympiaturm im Gegenlicht',               placeholder: false, objPos: 'right top'   }
+            ]
+          }
+        },
+
+        get images() {
+          return this.categories[this.activeCategory].images;
+        },
+        get n() {
+          return this.images.length;
+        },
+
+        switchCategory(cat) {
+          if (this.activeCategory === cat) return;
+          this.activeCategory = cat;
+          this.cur = 0;
+        },
+        go(d) {
+          this.cur = (this.cur + d + this.n) % this.n;
+        },
+        pos(i) {
+          let p = (i - this.cur + this.n) % this.n;
+          if (p > Math.floor(this.n / 2)) p -= this.n;
+          return p;
+        },
+        cls(i) {
+          const p = this.pos(i);
+          if (p === 0)  return 'cf-active';
+          if (p === -1) return 'cf-left';
+          if (p === 1)  return 'cf-right';
+          return 'cf-hidden';
+        }
+      };
+    }
+  </script>
+
+</body>
+</html>

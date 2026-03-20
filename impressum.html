@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – SK Studio · Stefan G. König</title>
+  <meta name="description" content="Impressum von SK Studio – Stefan G. König, Markenberater und kreativer Umsetzer in München.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://sk-studio.de/impressum.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/output.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+
+<body class="font-body bg-paper text-ink antialiased">
+
+  <a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:text-sm focus:rounded">
+    Zum Inhalt springen
+  </a>
+
+  <!-- HEADER (Subpage – immer paper) -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-stone transition-colors duration-300" x-data="{ open: false }">
+  <div class="px-6 md:px-10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between h-16" aria-label="Hauptnavigation">
+
+      <a href="index.html" aria-label="SK Studio – zur Startseite" class="flex items-center">
+        <img src="assets/images/SK_logo_schwarz.png" alt="SK Studio" width="40" height="30" class="h-8 w-auto">
+      </a>
+
+      <ul class="hidden md:flex items-center gap-6" role="list">
+        <li><a href="fotografie.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fotografie</a></li>
+        <li><a href="videografie.html" class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Videografie</a></li>
+        <li><a href="fine-art.html"    class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fine Art</a></li>
+        <li><a href="ueber-mich.html"  class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Über Mich</a></li>
+        <li>
+          <a href="index.html#kontakt" class="font-body text-sm px-5 py-2 border border-ink text-ink hover:bg-ink hover:text-paper transition-all duration-300 tracking-wide ml-2">
+            Kontakt
+          </a>
+        </li>
+      </ul>
+
+      <button @click="open = !open" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px]" :aria-expanded="open" aria-label="Menü öffnen">
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-[6px]' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
+        <span class="block w-6 h-px bg-ink transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-[6px]' : ''"></span>
+      </button>
+    </nav>
+  </div>
+
+    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" @click.away="open = false" class="md:hidden bg-paper border-t border-stone px-6 py-8">
+      <ul class="flex flex-col gap-6" role="list">
+        <li><a href="fotografie.html"    @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fotografie</a></li>
+        <li><a href="videografie.html"   @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Videografie</a></li>
+        <li><a href="fine-art.html"      @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Fine Art</a></li>
+        <li><a href="ueber-mich.html"    @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Über Mich</a></li>
+        <li><a href="index.html#kontakt" @click="open = false" class="font-body text-xl text-ink hover:text-muted transition-colors">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="content" class="pt-16">
+
+    <!-- PAGE HEADER -->
+    <section class="pt-10 pb-24 md:pt-14 md:pb-32 px-6 md:px-10 bg-paper" aria-label="Seitenüberschrift">
+      <div class="max-w-6xl mx-auto">
+        <p class="section-label mb-6">Rechtliches</p>
+        <h1
+          class="font-display font-extrabold leading-[0.92] tracking-tight text-ink"
+          style="font-size: clamp(2.5rem, 6vw, 5.5rem);"
+        >
+          Impressum
+        </h1>
+        <p class="mt-4 font-body text-base text-muted">Angaben gemäß § 5 TMG</p>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-16 md:py-24 px-6 md:px-10" aria-label="Impressum">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+
+          <!-- Linke Spalte -->
+          <div>
+
+            <!-- Angaben gemäß § 5 TMG -->
+            <div>
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-4">Angaben gemäß § 5 TMG</p>
+              <address class="not-italic font-body text-base text-ink/75 leading-relaxed">
+                Stefan G. König<br>
+                SK Studio<br>
+                Elsenheimerstr. 24<br>
+                80687 München
+              </address>
+              <div class="font-body text-base text-ink/75 leading-relaxed mt-4">
+                <p>Telefon: <a href="tel:+498971673624" class="hover:text-ink transition-colors duration-300">089 716 736 24</a></p>
+                <p>E-Mail: <a href="mailto:kontakt@koenig-stefan.de" class="hover:text-ink transition-colors duration-300">kontakt@koenig-stefan.de</a></p>
+              </div>
+            </div>
+
+            <!-- USt-ID -->
+            <div class="border-t border-ink/10 pt-8 mt-8">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-4">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG</p>
+              <p class="font-body text-base text-ink/75 leading-relaxed">DE286845570</p>
+            </div>
+
+            <!-- Berufliche Tätigkeit -->
+            <div class="border-t border-ink/10 pt-8 mt-8">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-4">Berufliche Tätigkeit</p>
+              <p class="font-body text-base text-ink/75 leading-relaxed">
+                Freiberuflicher Markenberater und kreativer Umsetzer (nicht kammerpflichtig)
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Rechte Spalte -->
+          <div>
+
+            <!-- Verantwortlicher MStV -->
+            <div>
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-4">Verantwortlicher für journalistische Inhalte gemäß § 18 Abs. 2 MStV</p>
+              <p class="font-body text-base text-ink/75 leading-relaxed">
+                Stefan G. König<br>
+                Elsenheimerstr. 24<br>
+                80687 München
+              </p>
+            </div>
+
+            <!-- EU-Streitschlichtung -->
+            <div class="border-t border-ink/10 pt-8 mt-8">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-4">EU-Streitschlichtung</p>
+              <p class="font-body text-base text-ink/75 leading-relaxed">
+                Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-ink underline hover:text-muted transition-colors duration-300">
+                  https://ec.europa.eu/consumers/odr/
+                </a><br>
+                Unsere E-Mail-Adresse finden Sie oben im Impressum.
+              </p>
+            </div>
+
+            <!-- Verbraucherstreitbeilegung -->
+            <div class="border-t border-ink/10 pt-8 mt-8">
+              <p class="text-xs tracking-[0.2em] uppercase text-muted mb-4">Verbraucherstreitbeilegung / Universalschlichtungsstelle</p>
+              <p class="font-body text-base text-ink/75 leading-relaxed">
+                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink border-t border-paper/10 py-8 px-6 md:px-10" role="contentinfo">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="font-body text-sm text-paper/30">© <time datetime="2026">2026</time> Stefan G. König · SK Studio</p>
+      <nav aria-label="Rechtliches" class="flex items-center gap-6">
+        <a href="impressum.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Impressum</a>
+        <a href="datenschutz.html" class="font-body text-sm text-paper/30 hover:text-paper/60 transition-colors duration-300">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
