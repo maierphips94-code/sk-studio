@@ -34,14 +34,14 @@ function updateLeistungen() {
       let yOffset, numOpacity;
       if (localProgress <= 0.3) {
         const t = easeInOutCubic(localProgress / 0.3);
-        yOffset    = 120 * (1 - t);
+        yOffset    = -120 * t;
         numOpacity = t * 0.25;
       } else if (localProgress <= 0.7) {
-        yOffset    = 0;
+        yOffset    = -120;
         numOpacity = 0.25;
       } else {
         const t = easeInOutCubic((localProgress - 0.7) / 0.3);
-        yOffset    = -120 * t;
+        yOffset    = -120 - 120 * t;
         numOpacity = 0.25 * (1 - t);
       }
       if (i !== idx && i !== idx + 1 && i !== idx - 1) numOpacity = 0;
