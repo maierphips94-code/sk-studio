@@ -32,16 +32,17 @@ function updateLeistungen() {
     const numEl = step.querySelector('.leistung-number');
     if (numEl) {
       let yOffset, numOpacity;
+      const numShift = -30;
       if (localProgress <= 0.3) {
         const t = easeInOutCubic(localProgress / 0.3);
-        yOffset    = 120 * (1 - t);
+        yOffset    = 120 * (1 - t) + numShift;
         numOpacity = t * 0.25;
       } else if (localProgress <= 0.7) {
-        yOffset    = 0;
+        yOffset    = numShift;
         numOpacity = 0.25;
       } else {
         const t = easeInOutCubic((localProgress - 0.7) / 0.3);
-        yOffset    = -120 * t;
+        yOffset    = -120 * t + numShift;
         numOpacity = 0.25 * (1 - t);
       }
       if (i !== idx && i !== idx + 1 && i !== idx - 1) numOpacity = 0;
