@@ -32,7 +32,7 @@ function updateLeistungen() {
     const numEl = step.querySelector('.leistung-number');
     if (numEl) {
       let yOffset, numOpacity;
-      const numShift = -30;
+      const numShift = -15;
       if (localProgress <= 0.3) {
         const t = easeInOutCubic(localProgress / 0.3);
         yOffset    = 120 * (1 - t) + numShift;
