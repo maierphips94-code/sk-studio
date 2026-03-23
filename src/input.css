@@ -43,12 +43,22 @@
   will-change: opacity;
 }
 
+/* Desktop: data-fade auf leistung-step neutralisieren */
+@media (min-width: 768px) {
+  .leistung-step[data-fade],
+  .leistung-step[data-fade].is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 @media (max-width: 767px) {
   .leistung-step {
     position: static !important;
     pointer-events: auto !important;
     padding-top: 0 !important;
-    opacity: 1 !important;
+    /* opacity wird von data-fade gesteuert */
   }
   .leistung-step .leistung-content {
     opacity: 1 !important;
