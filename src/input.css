@@ -45,16 +45,24 @@
 
 @media (max-width: 767px) {
   .leistung-step {
-    position: static;
-    pointer-events: auto;
-    padding-top: 0;
-  }
-  .leistung-content {
+    position: static !important;
+    pointer-events: auto !important;
+    padding-top: 0 !important;
     opacity: 1 !important;
   }
-  .leistung-number {
+  .leistung-step .leistung-content {
+    opacity: 1 !important;
+    padding-left: 0 !important;
+  }
+  .leistung-step .leistung-number {
     opacity: 0.12 !important;
     transform: none !important;
+    position: static !important;
+    left: auto !important;
+  }
+  .leistungen-wrapper {
+    height: auto !important;
+    position: static !important;
   }
 }
 
