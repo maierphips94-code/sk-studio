@@ -535,7 +535,7 @@
             </h2>
           </div>
 
-          <div class="w-fit">
+          <div class="w-full md:w-fit">
 
             <!-- 3 Kategorie-Buttons -->
             <div class="flex flex-wrap gap-3 md:gap-4 mb-10">
@@ -552,12 +552,12 @@
             </div>
 
             <!-- Firmenliste -->
-            <ul class="space-y-0 w-full min-h-[29rem]" role="list">
+            <ul class="space-y-0 w-full md:min-h-[29rem]" role="list">
               <template x-for="(firma, i) in categories[active].firms" :key="active + '-' + i">
                 <li class="border-b border-ink/10 py-4 last:border-b-0">
                   <span
                     class="font-display font-normal text-ink text-lg
-                           block leading-snug whitespace-nowrap"
+                           block leading-snug md:whitespace-nowrap"
                     x-text="firma"
                   ></span>
                 </li>
