@@ -66,6 +66,19 @@
   }
 }
 
+/* ─── Referenzen: linke Spalte bündig mit max-w-6xl-Containern ─── */
+@media (min-width: 768px) {
+  .ref-col-left {
+    padding-left: max(2.5rem, calc((100vw - 72rem) / 2));
+    padding-right: 3rem; /* md:pr-12 */
+  }
+}
+@media (min-width: 1024px) {
+  .ref-col-left {
+    padding-right: 4rem; /* lg:pr-16 */
+  }
+}
+
 /* ─── Scroll-Fade-Animationen ─── */
 [data-fade] {
   opacity: 0;
