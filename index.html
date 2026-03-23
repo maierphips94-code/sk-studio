@@ -153,11 +153,11 @@
         :aria-expanded="open"
         aria-label="Menü öffnen"
       >
-        <span class="burger-bar block w-6 h-px transition-all duration-300 origin-center"
+        <span class="burger-bar block w-6 h-px bg-ink transition-all duration-300 origin-center"
               :class="open ? 'rotate-45 translate-y-[6px]' : ''"></span>
-        <span class="burger-bar block w-6 h-px transition-all duration-300"
+        <span class="burger-bar block w-6 h-px bg-ink transition-all duration-300"
               :class="open ? 'opacity-0' : ''"></span>
-        <span class="burger-bar block w-6 h-px transition-all duration-300 origin-center"
+        <span class="burger-bar block w-6 h-px bg-ink transition-all duration-300 origin-center"
               :class="open ? '-rotate-45 -translate-y-[6px]' : ''"></span>
       </button>
     </nav>
@@ -381,7 +381,6 @@
 
 
           </div>
-          <div class="border-t md:hidden" style="border-color: #c5c0b8;"></div>
 
           <!-- Progress-Indicator -->
           <div class="-mt-2 hidden md:flex items-center justify-center gap-4" aria-hidden="true">
