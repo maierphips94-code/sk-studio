@@ -183,6 +183,85 @@ function updateLeistungen() {
 
 }
 
+// ── Was ich wirklich tue – Karussell ──────────────────
+const wirklichSection = document.getElementById('wirklich');
+const wirklichCards   = document.querySelectorAll('.wirklich-card');
+let   wirklichReady   = false;
+
+function wirklichLayout() {
+  const wrapper = wirklichSection && wirklichSection.querySelector('.wirklich-wrapper');
+  if (!wrapper || !wirklichCards.length) return null;
+  const cardWidth   = wirklichCards[0].offsetWidth;
+  const wrapperLeft = wrapper.getBoundingClientRect().left;
+  // Aktive Kachel mittig im Viewport zentrieren
+  const centerX     = Math.round(window.innerWidth / 2 - cardWidth / 2 - wrapperLeft);
+  // Peek-Kachel halb am Bildschirmrand: slide = halbe Viewport-Breite
+  const slide       = Math.round(window.innerWidth / 2);
+  return { centerX, cardWidth, slide };
+}
+
+function updateWirklich() {
+  if (!wirklichSection || !wirklichCards.length) return;
+  if (window.innerWidth < 768) return;
+
+  const layout = wirklichLayout();
+  if (!layout) return;
+  const { centerX, slide } = layout;
+
+  const sectionTop = wirklichSection.offsetTop;
+  const scrollable = wirklichSection.offsetHeight - window.innerHeight;
+  const progress   = Math.max(0, Math.min(1, (window.scrollY - sectionTop) / scrollable));
+  const total      = wirklichCards.length;
+
+  // Smooth card-Index mit Dwell-Zonen
+  const scaled = progress * total;
+  let rawIdx   = 0;
+  for (let i = 0; i < total - 1; i++) {
+    if (scaled >= i + 1.25) {
+      rawIdx = i + 1;
+    } else if (scaled >= i + 0.75) {
+      rawIdx = i + easeInOutCubic((scaled - i - 0.75) / 0.5);
+    }
+  }
+  rawIdx = Math.max(0, Math.min(total - 1, rawIdx));
+
+  wirklichCards.forEach((card, i) => {
+    const relPos  = i - rawIdx;                         // 0=aktiv, 1=rechts, -1=links
+    const x       = centerX + Math.round(relPos * slide);
+    // Aktiv: 1.0 | Peek (±1): 0.28 | weiter weg: 0
+    const absRel  = Math.abs(relPos);
+    const opacity = absRel <= 1
+      ? 1 - (1 - 0.28) * absRel                // 1→0.28: kontinuierlich von Mitte zu Peek
+      : Math.max(0, 0.28 * (2 - absRel));       // 0.28→0: weiter nach außen
+
+    card.style.transform = `translateX(${x}px)`;
+    if (wirklichReady || i !== 0) {
+      card.style.opacity = opacity.toFixed(2);
+    }
+  });
+
+  // ── Dots + Counter ──
+  const activeIdx = Math.round(rawIdx);
+  document.querySelectorAll('.wirklich-dot').forEach((dot, i) => {
+    dot.style.width   = i === activeIdx ? '24px' : '8px';
+    dot.style.opacity = i === activeIdx ? '1'    : '0.2';
+  });
+  const counter = document.getElementById('wirklich-counter');
+  if (counter) counter.textContent = `0${activeIdx + 1} / 0${total}`;
+}
+
+let rafPendingWirklich = false;
+function onScrollWirklich() {
+  if (!rafPendingWirklich) {
+    rafPendingWirklich = true;
+    requestAnimationFrame(() => { updateWirklich(); rafPendingWirklich = false; });
+  }
+}
+
+window.addEventListener('scroll', onScrollWirklich, { passive: true });
+window.addEventListener('resize', updateWirklich,  { passive: true });
+updateWirklich();
+
 let rafPending = false;
 function onScrollLeistungen() {
   if (!rafPending) {
@@ -261,6 +340,39 @@ document.addEventListener('DOMContentLoaded', () => {
     { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
   );
   document.querySelectorAll('[data-fade]').forEach(el => fadeObserver.observe(el));
+
+  // ── Wirklich: Kachel 01 beim ersten Einblenden faden (wie data-fade) ──
+  if (wirklichSection && wirklichCards.length) {
+    // Initiale Positionen setzen (vor dem Einblenden)
+    const l0 = wirklichLayout();
+    if (l0 && window.innerWidth >= 768) {
+      const { centerX, slide } = l0;
+      wirklichCards.forEach((card, i) => {
+        card.style.transform = `translateX(${centerX + i * slide}px)`;
+      });
+    }
+    new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !wirklichReady && window.innerWidth >= 768) {
+        wirklichReady = true;
+        const l = wirklichLayout();
+        if (!l) return;
+        const { centerX, slide } = l;
+        // Kachel 01: normales Einblenden
+        wirklichCards[0].style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        wirklichCards[0].style.opacity    = '1';
+        wirklichCards[0].style.transform  = `translateX(${centerX}px)`;
+        // Peek-Kachel rechts leicht einblenden
+        if (wirklichCards[1]) {
+          wirklichCards[1].style.transition = 'opacity 0.5s ease 0.2s';
+          wirklichCards[1].style.opacity    = '0.28';
+          wirklichCards[1].style.transform  = `translateX(${centerX + slide}px)`;
+        }
+        setTimeout(() => {
+          wirklichCards.forEach(c => { c.style.transition = ''; });
+        }, 900);
+      }
+    }, { threshold: 0 }).observe(wirklichSection);
+  }
 
   // Header: transparent über Hero-Video (nur auf index.html), sonst immer paper
   const header   = document.querySelector('header');

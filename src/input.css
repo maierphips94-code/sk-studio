@@ -76,6 +76,33 @@
   }
 }
 
+/* ─── Was ich wirklich tue: Kacheln ─── */
+@media (min-width: 768px) {
+  .wirklich-wrapper {
+    position: relative;
+    height: clamp(460px, 58vh, 540px);
+  }
+  .wirklich-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(640px, 100%);
+    will-change: transform, opacity;
+    opacity: 0;
+  }
+}
+@media (max-width: 767px) {
+  .wirklich-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .wirklich-card {
+    opacity: 1;
+  }
+}
+
 /* ─── Referenzen: linke Spalte bündig mit max-w-6xl-Containern ─── */
 @media (min-width: 768px) {
   .ref-col-left {
