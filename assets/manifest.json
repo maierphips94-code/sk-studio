@@ -163,13 +163,13 @@
   "referenzen": [
     {
       "folder": "Referenzen",
-      "file": "Medien&Travel.jpg",
-      "portrait": true
+      "file": "Health.jpg",
+      "portrait": false
     },
     {
       "folder": "Referenzen",
-      "file": "Medien.jpg",
-      "portrait": false
+      "file": "Medien&Travel.jpg",
+      "portrait": true
     },
     {
       "folder": "Referenzen",

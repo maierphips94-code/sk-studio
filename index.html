@@ -700,9 +700,9 @@
             const manifest = await fetch('assets/manifest.json').then(r => r.json());
             const refFiles = manifest.referenzen || [];
             for (const key of Object.keys(this.categories)) {
-              // Suche nach einer Datei, deren Name (ohne Endung) dem Kategorie-Key entspricht
+              // Suche nach einer Datei, deren Name (ohne Endung) mit dem Kategorie-Key beginnt
               const match = refFiles.find(
-                item => item.file.replace(/\.[^.]+$/, '').toLowerCase() === key.toLowerCase()
+                item => item.file.replace(/\.[^.]+$/, '').toLowerCase().startsWith(key.toLowerCase())
               );
               this.categories[key].img = match
                 ? 'assets/images/' + encodeURIComponent(match.folder) + '/' + encodeURIComponent(match.file)
