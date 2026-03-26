@@ -102,7 +102,7 @@
   }
   .wirklich-card {
     opacity: 1;
-    min-height: 900px;
+    min-height: 1100px;
     position: relative;
   }
   /* wirklich-inner bleibt absolute inset-0 – kein Override */
