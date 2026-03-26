@@ -33,7 +33,7 @@ function getImageSize(filePath) {
 // Mapping: manifest-key → Ordner(s) im Dateisystem
 const categoryFolders = {
   automobil:  ['Automobil'],
-  people:     ['Portrait', 'Event'],
+  people:     ['People'],
   industrie:  ['Industrie'],
   referenzen: ['Referenzen'],
 };

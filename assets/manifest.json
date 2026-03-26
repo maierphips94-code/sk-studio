@@ -7,28 +7,8 @@
     },
     {
       "folder": "Automobil",
-      "file": "A1_00674.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Automobil",
       "file": "A1_00779.jpg",
       "portrait": true
-    },
-    {
-      "folder": "Automobil",
-      "file": "BMW-Welt_03-2021_01780.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Automobil",
-      "file": "BMW-Welt_03-2021_01818.jpg",
-      "portrait": false
-    },
-    {
-      "folder": "Automobil",
-      "file": "BMWM_170421_114539 (2).jpg",
-      "portrait": false
     },
     {
       "folder": "Automobil",
@@ -42,18 +22,8 @@
     },
     {
       "folder": "Automobil",
-      "file": "DSC00086_Sw.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Automobil",
-      "file": "DSC00162.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Automobil",
-      "file": "DSC00354.jpg",
-      "portrait": true
+      "file": "DSC01108.jpg",
+      "portrait": false
     },
     {
       "folder": "Automobil",
@@ -67,76 +37,106 @@
     },
     {
       "folder": "Automobil",
-      "file": "_A1_5676.jpg",
+      "file": "DSC04806.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "Automobil",
+      "file": "DSC08421.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "Automobil",
+      "file": "Miami_1609461.jpg",
+      "portrait": true
+    },
+    {
+      "folder": "Automobil",
+      "file": "Miami_1609619 Kopie.jpg",
+      "portrait": true
+    },
+    {
+      "folder": "Automobil",
+      "file": "_A1_4882 Kopie.jpg",
       "portrait": false
     }
   ],
   "people": [
     {
-      "folder": "Portrait",
+      "folder": "People",
       "file": "08_BMW-Welt_2022-09_08848.jpg",
       "portrait": true
     },
     {
-      "folder": "Portrait",
-      "file": "BobbieBraeuer.jpg",
-      "portrait": false
-    },
-    {
-      "folder": "Portrait",
-      "file": "DSC02539.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Portrait",
-      "file": "DSC03706.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Portrait",
-      "file": "_A1_4076.jpg",
-      "portrait": true
-    },
-    {
-      "folder": "Event",
+      "folder": "People",
       "file": "A1_01050.jpg",
       "portrait": true
     },
     {
-      "folder": "Event",
+      "folder": "People",
+      "file": "BobbieBraeuer.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "People",
       "file": "DJI_20250807211542_0043_D.jpg",
       "portrait": false
     },
     {
-      "folder": "Event",
-      "file": "DSC01214.jpg",
-      "portrait": false
-    },
-    {
-      "folder": "Event",
-      "file": "DSC01477.jpg",
-      "portrait": false
-    },
-    {
-      "folder": "Event",
+      "folder": "People",
       "file": "DSC02052.jpg",
       "portrait": false
     },
     {
-      "folder": "Event",
+      "folder": "People",
+      "file": "DSC02539.jpg",
+      "portrait": true
+    },
+    {
+      "folder": "People",
       "file": "DSC03099.jpg",
       "portrait": false
     },
     {
-      "folder": "Event",
-      "file": "_A1_9119.jpg",
+      "folder": "People",
+      "file": "DSC03706.jpg",
+      "portrait": true
+    },
+    {
+      "folder": "People",
+      "file": "HeidiKlum.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "People",
+      "file": "Miami_1709789_1.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "People",
+      "file": "OliverZeidler fuer Audemars.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "People",
+      "file": "PhilippeSpanien_B.jpg",
+      "portrait": true
+    },
+    {
+      "folder": "People",
+      "file": "_A1_4076.jpg",
       "portrait": true
     }
   ],
   "industrie": [
     {
       "folder": "Industrie",
-      "file": "09_BMW-Museum_Projektion_2021-05_06803.jpg",
+      "file": "67_BMW-Welt_Abholung_2022-12_07087.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "Industrie",
+      "file": "74_BMW-Welt_Abholung_2022-12_07213.jpg",
       "portrait": false
     },
     {
@@ -146,12 +146,17 @@
     },
     {
       "folder": "Industrie",
-      "file": "BMW240703_StefanGKoenig_4239_B.jpg",
+      "file": "DSC_5141.jpg",
       "portrait": false
     },
     {
       "folder": "Industrie",
-      "file": "DSC_5141.jpg",
+      "file": "Miami_1900310.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "Industrie",
+      "file": "kranzbach.jpg",
       "portrait": false
     }
   ],
