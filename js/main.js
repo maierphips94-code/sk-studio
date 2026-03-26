@@ -374,6 +374,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0 }).observe(wirklichSection);
   }
 
+  // ── Mobile: alle Wirklich-Kacheln auf gleiche Höhe ──────────────────────────
+  function equalizeWirklichCards() {
+    if (window.innerWidth >= 768) {
+      wirklichCards.forEach(c => c.style.height = '');
+      return;
+    }
+    wirklichCards.forEach(c => c.style.height = '');
+    let maxH = 0;
+    wirklichCards.forEach(c => { maxH = Math.max(maxH, c.offsetHeight); });
+    wirklichCards.forEach(c => c.style.height = maxH + 'px');
+  }
+  if (wirklichCards.length) {
+    equalizeWirklichCards();
+    window.addEventListener('resize', equalizeWirklichCards);
+  }
+
   // Header: transparent über Hero-Video (nur auf index.html), sonst immer paper
   const header   = document.querySelector('header');
   const hero     = document.getElementById('hero');
