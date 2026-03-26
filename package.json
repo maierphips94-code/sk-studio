@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "SK Studio – Stefan G. König | Markenberater und kreativer Umsetzer, München",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/output.css --minify",
+    "build": "node scripts/generate-manifest.js && tailwindcss -i ./src/input.css -o ./assets/output.css --minify",
     "dev": "tailwindcss -i ./src/input.css -o ./assets/output.css --watch"
   },
   "devDependencies": {

@@ -1,0 +1,128 @@
+{
+  "automobil": [
+    {
+      "folder": "Automobil",
+      "file": "16_BMW-Welt_2023-08_.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "A1_00674.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "A1_00779.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "BMW-Welt_03-2021_01780.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "BMW-Welt_03-2021_01818.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "BMWM_170421_114539 (2).jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "BMWM_170422_065523 (2).jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "BMWM_170422_180603.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "DSC00086_Sw.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "DSC00162.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "DSC00354.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "DSC02995.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "DSC03030.jpg"
+    },
+    {
+      "folder": "Automobil",
+      "file": "_A1_5676.jpg"
+    }
+  ],
+  "people": [
+    {
+      "folder": "Portrait",
+      "file": "08_BMW-Welt_2022-09_08848.jpg"
+    },
+    {
+      "folder": "Portrait",
+      "file": "BobbieBraeuer.jpg"
+    },
+    {
+      "folder": "Portrait",
+      "file": "DSC02539.jpg"
+    },
+    {
+      "folder": "Portrait",
+      "file": "DSC03706.jpg"
+    },
+    {
+      "folder": "Portrait",
+      "file": "_A1_4076.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "A1_01050.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "DJI_20250807211542_0043_D.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "DSC01214.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "DSC01477.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "DSC02052.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "DSC03099.jpg"
+    },
+    {
+      "folder": "Event",
+      "file": "_A1_9119.jpg"
+    }
+  ],
+  "industrie": [
+    {
+      "folder": "Industrie",
+      "file": "09_BMW-Museum_Projektion_2021-05_06803.jpg"
+    },
+    {
+      "folder": "Industrie",
+      "file": "A1_07816 Kopie.jpg"
+    },
+    {
+      "folder": "Industrie",
+      "file": "BMW240703_StefanGKoenig_4239_B.jpg"
+    },
+    {
+      "folder": "Industrie",
+      "file": "DSC_5141.jpg"
+    }
+  ]
+}

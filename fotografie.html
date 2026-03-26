@@ -312,59 +312,52 @@
         cur: 0,
 
         categories: {
-          automobil: {
-            label: 'Automobil',
-            number: '01',
-            images: [
-              { src: 'assets/images/Automobil/A1_00674.jpg',                          alt: 'BMW iX2 mit dramatischen Lichtstrahlen',             placeholder: false, objPos: 'center 60%'   },
-              { src: 'assets/images/Automobil/16_BMW-Welt_2023-08_.jpg',           alt: 'BMW M3 Touring im Parkhaus, cinematische Stimmung',   placeholder: false, objPos: 'right center'  },
-              { src: 'assets/images/Automobil/BMW-Welt_03-2021_01780.jpg',         alt: 'BMW Z4 in der BMW Welt München',                      placeholder: false, objPos: 'center 65%'   },
-              { src: 'assets/images/Automobil/BMW-Welt_03-2021_01818.jpg',         alt: 'BMW in der BMW Welt München',                         placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/DSC03030.jpg',                       alt: 'BMW i7 vor farbiger Fassade im Kunstviertel',         placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/DSC02995.jpg',                       alt: 'BMW Fahrzeugaufnahme',                                placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/DSC00162.jpg',                       alt: 'BMW Fahrzeugaufnahme',                                placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/DSC00354.jpg',                       alt: 'BMW Fahrzeugaufnahme',                                placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/DSC00086_Sw.jpg',                    alt: 'BMW Schwarz-Weiß Aufnahme',                           placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/BMWM_170421_114539%20(2).jpg',       alt: 'BMW M Fahrzeug',                                      placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/BMWM_170422_065523%20(2).jpg',       alt: 'BMW M Fahrzeug',                                      placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/BMWM_170422_180603.jpg',             alt: 'BMW M Fahrzeug bei Sonnenuntergang',                  placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/A1_00779.jpg',                       alt: 'BMW Fahrzeugaufnahme',                                placeholder: false, objPos: 'center center' },
-              { src: 'assets/images/Automobil/_A1_5676.jpg',                       alt: 'BMW Fahrzeugaufnahme',                                placeholder: false, objPos: 'center center' }
-            ]
-          },
-          portrait: {
-            label: 'Portrait',
-            number: '02',
-            images: [
-              { src: 'assets/images/Portrait/BobbieBraeuer.jpg',                alt: 'Koch mit Glasreflexion, stimmungsvolles Portrait',         placeholder: false, objPos: 'left top'     },
-              { src: 'assets/images/Portrait/DSC02539.jpg',                     alt: 'Frau auf Treppe, natürliches Außenlicht',                 placeholder: false, objPos: 'center 35%'   },
-              { src: 'assets/images/Portrait/DSC03706.jpg',                     alt: 'Frau lachend auf Treppe, natürliches Bokeh',              placeholder: false, objPos: 'center 5%'    },
-              { src: 'assets/images/Portrait/08_BMW-Welt_2022-09_08848.jpg',    alt: 'Mann in Küche, Available-Light-Portrait',                 placeholder: false, objPos: 'center 5%'    },
-              { src: 'assets/images/Portrait/_A1_4076.jpg',                     alt: 'Portrait',                                                placeholder: false, objPos: 'center top'   }
-            ]
-          },
-          architektur: {
-            label: 'Architektur',
-            number: '03',
-            images: [
-              { src: 'assets/images/Architektur/DSC_5141.jpg',                               alt: 'BMW Turm bei Nacht, blaue Lichtstimmung',             placeholder: false, objPos: 'center center'},
-              { src: 'assets/images/Architektur/A1_07816 Kopie.jpg',                         alt: 'BMW Welt im Schnee mit Olympiaturm',                  placeholder: false, objPos: 'center top'   },
-              { src: 'assets/images/Architektur/09_BMW-Museum_Projektion_2021-05_06803.jpg',  alt: 'BMW Museum mit Lichtprojektion',                      placeholder: false, objPos: 'right center' },
-              { src: 'assets/images/Architektur/BMW240703_StefanGKoenig_4239_B.jpg',         alt: 'Sanitäter in moderner Architekturhalle',              placeholder: false, objPos: 'left top'     }
-            ]
-          },
-          event: {
-            label: 'Event',
-            number: '04',
-            images: [
-              { src: 'assets/images/Event/_A1_9119.jpg',                          alt: 'DJ-Set mit Neon-Lichtern auf der Bühne',                       placeholder: false, objPos: 'center 40%'   },
-              { src: 'assets/images/Event/DSC01214.jpg',                        alt: 'Event-Terrasse der BMW Welt bei Nacht aus der Vogelperspektive',placeholder: false, objPos: 'center center'},
-              { src: 'assets/images/Event/DSC03099.jpg',                        alt: 'Mann winkt freudig auf einer Veranstaltung',                   placeholder: false, objPos: '60% top'     },
-              { src: 'assets/images/Event/DSC02052.jpg',                        alt: 'Outdoor-Festival mit Olympiaturm im Gegenlicht',               placeholder: false, objPos: 'right top'   },
-              { src: 'assets/images/Event/DSC01477.jpg',                        alt: 'Event-Fotografie',                                             placeholder: false, objPos: 'center center'},
-              { src: 'assets/images/Event/A1_01050.jpg',                        alt: 'Event-Aufnahme',                                               placeholder: false, objPos: 'center center'},
-              { src: 'assets/images/Event/DJI_20250807211542_0043_D.jpg',       alt: 'Drohnenaufnahme Event',                                        placeholder: false, objPos: 'center center'}
-            ]
+          automobil: { label: 'Automobil', number: '01', images: [] },
+          people:    { label: 'People',    number: '02', images: [] },
+          industrie: { label: 'Industrie', number: '03', images: [] },
+        },
+
+        // Manuelle Metadaten-Overrides: Dateiname → { alt, objPos }
+        meta: {
+          'A1_00674.jpg':                              { alt: 'BMW iX2 mit dramatischen Lichtstrahlen',             objPos: 'center 60%'   },
+          '16_BMW-Welt_2023-08_.jpg':                  { alt: 'BMW M3 Touring im Parkhaus, cinematische Stimmung',  objPos: 'right center'  },
+          'BMW-Welt_03-2021_01780.jpg':                { alt: 'BMW Z4 in der BMW Welt München',                     objPos: 'center 65%'   },
+          'BMW-Welt_03-2021_01818.jpg':                { alt: 'BMW in der BMW Welt München',                        objPos: 'center center' },
+          'DSC03030.jpg':                              { alt: 'BMW i7 vor farbiger Fassade im Kunstviertel',        objPos: 'center center' },
+          'BMWM_170421_114539 (2).jpg':                { alt: 'BMW M Fahrzeug',                                     objPos: 'center center' },
+          'BMWM_170422_065523 (2).jpg':                { alt: 'BMW M Fahrzeug',                                     objPos: 'center center' },
+          'BMWM_170422_180603.jpg':                    { alt: 'BMW M Fahrzeug bei Sonnenuntergang',                 objPos: 'center center' },
+          'BobbieBraeuer.jpg':                         { alt: 'Koch mit Glasreflexion, stimmungsvolles Portrait',  objPos: 'left top'     },
+          'DSC02539.jpg':                              { alt: 'Frau auf Treppe, natürliches Außenlicht',           objPos: 'center 35%'   },
+          'DSC03706.jpg':                              { alt: 'Frau lachend auf Treppe, natürliches Bokeh',        objPos: 'center 5%'    },
+          '08_BMW-Welt_2022-09_08848.jpg':             { alt: 'Mann in Küche, Available-Light-Portrait',           objPos: 'center 5%'    },
+          '_A1_4076.jpg':                              { alt: 'Portrait',                                          objPos: 'center top'   },
+          '_A1_9119.jpg':                              { alt: 'DJ-Set mit Neon-Lichtern auf der Bühne',            objPos: 'center 40%'   },
+          'DSC01214.jpg':                              { alt: 'Event-Terrasse der BMW Welt bei Nacht',             objPos: 'center center' },
+          'DSC03099.jpg':                              { alt: 'Mann winkt freudig auf einer Veranstaltung',        objPos: '60% top'     },
+          'DSC02052.jpg':                              { alt: 'Outdoor-Festival mit Olympiaturm im Gegenlicht',    objPos: 'right top'   },
+          'DSC01477.jpg':                              { alt: 'Event-Fotografie',                                  objPos: 'center center' },
+          'DJI_20250807211542_0043_D.jpg':             { alt: 'Drohnenaufnahme Event',                             objPos: 'center center' },
+          'DSC_5141.jpg':                              { alt: 'BMW Turm bei Nacht, blaue Lichtstimmung',           objPos: 'center center' },
+          'A1_07816 Kopie.jpg':                        { alt: 'BMW Welt im Schnee mit Olympiaturm',                objPos: 'center top'   },
+          '09_BMW-Museum_Projektion_2021-05_06803.jpg':{ alt: 'BMW Museum mit Lichtprojektion',                    objPos: 'right center' },
+          'BMW240703_StefanGKoenig_4239_B.jpg':        { alt: 'Sanitäter in moderner Architekturhalle',            objPos: 'left top'     },
+        },
+
+        async init() {
+          try {
+            const manifest = await fetch('assets/manifest.json').then(r => r.json());
+            for (const [key, items] of Object.entries(manifest)) {
+              if (!this.categories[key]) continue;
+              this.categories[key].images = items.map(({ folder, file }) => ({
+                src: 'assets/images/' + encodeURIComponent(folder) + '/' + encodeURIComponent(file),
+                alt: (this.meta[file] || {}).alt || file.replace(/\.[^.]+$/, ''),
+                objPos: (this.meta[file] || {}).objPos || 'center center',
+                placeholder: false,
+              }));
+            }
+          } catch (e) {
+            console.error('Manifest konnte nicht geladen werden:', e);
           }
         },
 
