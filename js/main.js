@@ -387,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (wirklichCards.length) {
     equalizeWirklichCards();
+    window.addEventListener('load', equalizeWirklichCards);
     window.addEventListener('resize', equalizeWirklichCards);
   }
 
