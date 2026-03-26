@@ -90,6 +90,7 @@
     width: min(640px, 100%);
     will-change: transform, opacity;
     opacity: 0;
+    overflow: hidden;
   }
 }
 @media (max-width: 767px) {
@@ -100,6 +101,8 @@
   }
   .wirklich-card {
     opacity: 1;
+    min-height: 420px;
+    position: relative;
   }
 }
 
