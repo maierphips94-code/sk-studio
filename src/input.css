@@ -107,7 +107,7 @@
   }
   /* wirklich-inner bleibt absolute inset-0 – kein Override */
   .wirklich-content {
-    top: auto !important;
+    bottom: auto !important;
     overflow: visible !important;
   }
 }
