@@ -650,7 +650,7 @@
         categories: {
           wirtschaft: {
             label: 'Wirtschaft & Industrie',
-            img: 'assets/images/Referenzen/Wirtschaft.jpg',
+            img: null,
             firms: [
               'BMW Group / BMW Welt',
               'vbw – die Bayerische Wirtschaft',
@@ -664,7 +664,7 @@
           },
           medien: {
             label: 'Medien & Travel',
-            img: 'assets/images/Referenzen/Medien.jpg',
+            img: null,
             firms: [
               'Antenne Bayern Group',
               'Hitradio RT1',
@@ -676,11 +676,28 @@
           },
           health: {
             label: 'Health',
-            img: 'assets/images/Referenzen/Medien&Travel.jpg',
+            img: null,
             firms: [
               'Sandoz / Novartis',
               'Heel'
             ]
+          }
+        },
+        async init() {
+          try {
+            const manifest = await fetch('assets/manifest.json').then(r => r.json());
+            const refFiles = manifest.referenzen || [];
+            for (const key of Object.keys(this.categories)) {
+              // Suche nach einer Datei, deren Name (ohne Endung) dem Kategorie-Key entspricht
+              const match = refFiles.find(
+                item => item.file.replace(/\.[^.]+$/, '').toLowerCase() === key.toLowerCase()
+              );
+              this.categories[key].img = match
+                ? 'assets/images/' + encodeURIComponent(match.folder) + '/' + encodeURIComponent(match.file)
+                : null;
+            }
+          } catch (e) {
+            console.error('Manifest konnte nicht geladen werden:', e);
           }
         },
         switchCategory(key) {

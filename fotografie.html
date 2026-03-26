@@ -217,8 +217,10 @@
                   <img
                     :src="img.src"
                     :alt="img.alt"
-                    :style="'object-position:' + img.objPos"
-                    class="w-full h-full object-cover"
+                    :style="img.portrait
+                      ? 'object-fit:contain; object-position:center center'
+                      : 'object-fit:cover; object-position:' + img.objPos"
+                    class="w-full h-full"
                     loading="lazy"
                   >
                 </template>
@@ -349,10 +351,11 @@
             const manifest = await fetch('assets/manifest.json').then(r => r.json());
             for (const [key, items] of Object.entries(manifest)) {
               if (!this.categories[key]) continue;
-              this.categories[key].images = items.map(({ folder, file }) => ({
+              this.categories[key].images = items.map(({ folder, file, portrait }) => ({
                 src: 'assets/images/' + encodeURIComponent(folder) + '/' + encodeURIComponent(file),
                 alt: (this.meta[file] || {}).alt || file.replace(/\.[^.]+$/, ''),
                 objPos: (this.meta[file] || {}).objPos || 'center center',
+                portrait: portrait || false,
                 placeholder: false,
               }));
             }

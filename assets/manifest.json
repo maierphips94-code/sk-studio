@@ -2,127 +2,174 @@
   "automobil": [
     {
       "folder": "Automobil",
-      "file": "16_BMW-Welt_2023-08_.jpg"
+      "file": "16_BMW-Welt_2023-08_.jpg",
+      "portrait": false
     },
     {
       "folder": "Automobil",
-      "file": "A1_00674.jpg"
+      "file": "A1_00674.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "A1_00779.jpg"
+      "file": "A1_00779.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "BMW-Welt_03-2021_01780.jpg"
+      "file": "BMW-Welt_03-2021_01780.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "BMW-Welt_03-2021_01818.jpg"
+      "file": "BMW-Welt_03-2021_01818.jpg",
+      "portrait": false
     },
     {
       "folder": "Automobil",
-      "file": "BMWM_170421_114539 (2).jpg"
+      "file": "BMWM_170421_114539 (2).jpg",
+      "portrait": false
     },
     {
       "folder": "Automobil",
-      "file": "BMWM_170422_065523 (2).jpg"
+      "file": "BMWM_170422_065523 (2).jpg",
+      "portrait": false
     },
     {
       "folder": "Automobil",
-      "file": "BMWM_170422_180603.jpg"
+      "file": "BMWM_170422_180603.jpg",
+      "portrait": false
     },
     {
       "folder": "Automobil",
-      "file": "DSC00086_Sw.jpg"
+      "file": "DSC00086_Sw.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "DSC00162.jpg"
+      "file": "DSC00162.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "DSC00354.jpg"
+      "file": "DSC00354.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "DSC02995.jpg"
+      "file": "DSC02995.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "DSC03030.jpg"
+      "file": "DSC03030.jpg",
+      "portrait": true
     },
     {
       "folder": "Automobil",
-      "file": "_A1_5676.jpg"
+      "file": "_A1_5676.jpg",
+      "portrait": false
     }
   ],
   "people": [
     {
       "folder": "Portrait",
-      "file": "08_BMW-Welt_2022-09_08848.jpg"
+      "file": "08_BMW-Welt_2022-09_08848.jpg",
+      "portrait": true
     },
     {
       "folder": "Portrait",
-      "file": "BobbieBraeuer.jpg"
+      "file": "BobbieBraeuer.jpg",
+      "portrait": false
     },
     {
       "folder": "Portrait",
-      "file": "DSC02539.jpg"
+      "file": "DSC02539.jpg",
+      "portrait": true
     },
     {
       "folder": "Portrait",
-      "file": "DSC03706.jpg"
+      "file": "DSC03706.jpg",
+      "portrait": true
     },
     {
       "folder": "Portrait",
-      "file": "_A1_4076.jpg"
+      "file": "_A1_4076.jpg",
+      "portrait": true
     },
     {
       "folder": "Event",
-      "file": "A1_01050.jpg"
+      "file": "A1_01050.jpg",
+      "portrait": true
     },
     {
       "folder": "Event",
-      "file": "DJI_20250807211542_0043_D.jpg"
+      "file": "DJI_20250807211542_0043_D.jpg",
+      "portrait": false
     },
     {
       "folder": "Event",
-      "file": "DSC01214.jpg"
+      "file": "DSC01214.jpg",
+      "portrait": false
     },
     {
       "folder": "Event",
-      "file": "DSC01477.jpg"
+      "file": "DSC01477.jpg",
+      "portrait": false
     },
     {
       "folder": "Event",
-      "file": "DSC02052.jpg"
+      "file": "DSC02052.jpg",
+      "portrait": false
     },
     {
       "folder": "Event",
-      "file": "DSC03099.jpg"
+      "file": "DSC03099.jpg",
+      "portrait": false
     },
     {
       "folder": "Event",
-      "file": "_A1_9119.jpg"
+      "file": "_A1_9119.jpg",
+      "portrait": true
     }
   ],
   "industrie": [
     {
       "folder": "Industrie",
-      "file": "09_BMW-Museum_Projektion_2021-05_06803.jpg"
+      "file": "09_BMW-Museum_Projektion_2021-05_06803.jpg",
+      "portrait": false
     },
     {
       "folder": "Industrie",
-      "file": "A1_07816 Kopie.jpg"
+      "file": "A1_07816 Kopie.jpg",
+      "portrait": false
     },
     {
       "folder": "Industrie",
-      "file": "BMW240703_StefanGKoenig_4239_B.jpg"
+      "file": "BMW240703_StefanGKoenig_4239_B.jpg",
+      "portrait": false
     },
     {
       "folder": "Industrie",
-      "file": "DSC_5141.jpg"
+      "file": "DSC_5141.jpg",
+      "portrait": false
+    }
+  ],
+  "referenzen": [
+    {
+      "folder": "Referenzen",
+      "file": "Medien&Travel.jpg",
+      "portrait": true
+    },
+    {
+      "folder": "Referenzen",
+      "file": "Medien.jpg",
+      "portrait": false
+    },
+    {
+      "folder": "Referenzen",
+      "file": "Wirtschaft.jpg",
+      "portrait": false
     }
   ]
 }
