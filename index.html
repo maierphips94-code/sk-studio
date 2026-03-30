@@ -260,130 +260,57 @@
 
 
     <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- WAS ICH WIRKLICH TUE – KACHELN                          -->
+    <!-- WAS ICH TUE – FEATURE CAROUSEL                          -->
     <!-- ═══════════════════════════════════════════════════════ -->
     <section
-      id="wirklich"
-      class="bg-paper relative h-auto md:h-[400vh]"
-      aria-labelledby="wirklich-h2"
+      id="feature-carousel"
+      class="bg-paper relative h-auto md:h-[300vh]"
+      aria-labelledby="fc-heading"
     >
-      <div class="md:sticky md:top-0 md:h-screen md:overflow-hidden relative px-6 md:px-10">
-        <div class="max-w-6xl mx-auto" style="padding-top: 88px;">
+      <div class="md:sticky md:top-0 md:h-screen md:overflow-hidden relative px-6 md:px-10 py-24 md:py-0">
+        <div class="max-w-6xl mx-auto" style="padding-top: 0; padding-bottom: 0;" id="fc-inner">
 
-          <!-- Header -->
-          <div class="mb-8 md:mb-10" data-fade>
-            <p class="section-label mb-6">Was ich tue</p>
-            <h2
-              id="wirklich-h2"
-              class="font-display font-extrabold leading-[0.92] tracking-tight text-ink"
-              style="font-size: clamp(1.8rem, 4vw, 3rem);"
-            >
-              Aus der Marke heraus.
-            </h2>
+        <!-- Header -->
+        <div class="mb-10 md:mb-14 md:pt-[88px]" data-fade>
+          <p class="section-label mb-6">Was ich tue</p>
+          <h2
+            id="fc-heading"
+            class="font-display font-extrabold leading-[0.92] tracking-tight text-ink"
+            style="font-size: clamp(1.8rem, 4vw, 3rem);"
+          >
+            Aus der Marke heraus.
+          </h2>
+        </div>
+
+        <!-- Carousel -->
+        <div
+          class="fc-container flex flex-col md:flex-row" style="overflow-x: clip;"
+          data-fade data-fade-delay="1"
+        >
+
+          <!-- Links: scrollende Label-Chips -->
+          <div
+            class="fc-left w-full md:w-[42%] relative overflow-hidden"
+          >
+            <div class="absolute inset-x-0 top-0 h-16 md:h-20 z-10 pointer-events-none"
+                 style="background: linear-gradient(to bottom, #f9f8f6 40%, transparent);"></div>
+            <div class="absolute inset-x-0 bottom-0 h-16 md:h-20 z-10 pointer-events-none"
+                 style="background: linear-gradient(to top, #f9f8f6 40%, transparent);"></div>
+            <div id="fc-label-track" style="position: absolute; inset: 0;"></div>
           </div>
 
-          <!-- Kacheln-Wrapper -->
-          <div class="wirklich-wrapper" style="margin-top: 4.5rem;">
-
-            <!-- Kachel 1 -->
-            <div class="wirklich-card group">
-              <img src="assets/images/Über Mich/01.jpg" alt="" aria-hidden="true"
-                class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700">
-              <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(10,10,10,0.05) 15%, rgba(10,10,10,0.88) 100%);"></div>
-              <div class="absolute bottom-0 left-0 h-px bg-paper/50 w-0 group-hover:w-full transition-all duration-500"></div>
-              <div class="wirklich-inner absolute inset-0">
-                <span class="absolute top-7 left-7 md:top-8 md:left-8 font-body text-xs tracking-widest text-paper/30 font-medium" aria-hidden="true">01</span>
-                <div class="wirklich-content absolute left-7 right-7 md:left-8 md:right-8 bottom-7 md:bottom-8 overflow-hidden" style="top: 32%;">
-                  <h3 class="font-display font-bold text-2xl md:text-3xl text-paper leading-tight mb-1">
-                    Strategische<br>Empathie
-                  </h3>
-                  <p class="font-body text-sm tracking-[0.15em] uppercase text-paper/50 mb-4">Verstehen statt nur zuhören</p>
-                  <p class="font-body text-base md:text-lg text-paper/70 leading-relaxed mb-5">
-                    Echte Effizienz entsteht durch Mitdenken. Ich höre nicht nur zu, sondern tauche tief in Ihre Welt ein, um Ihre Ziele wirklich zu durchdringen. Dieser Austausch auf Augenhöhe ist das Fundament für das Vertrauen meiner Kunden.
-                  </p>
-                  <ul class="flex flex-wrap gap-2">
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Markenberatung</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Konzeption</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Briefing-Analyse</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Kachel 2 -->
-            <div class="wirklich-card group">
-              <img src="assets/images/Über Mich/02.jpg" alt="" aria-hidden="true"
-                class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700">
-              <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(10,10,10,0.05) 15%, rgba(10,10,10,0.88) 100%);"></div>
-              <div class="absolute bottom-0 left-0 h-px bg-paper/50 w-0 group-hover:w-full transition-all duration-500"></div>
-              <div class="wirklich-inner absolute inset-0">
-                <span class="absolute top-7 left-7 md:top-8 md:left-8 font-body text-xs tracking-widest text-paper/30 font-medium" aria-hidden="true">02</span>
-                <div class="wirklich-content absolute left-7 right-7 md:left-8 md:right-8 bottom-7 md:bottom-8 overflow-hidden" style="top: 32%;">
-                  <h3 class="font-display font-bold text-2xl md:text-3xl text-paper leading-tight mb-1">
-                    Analytische<br>Klarheit
-                  </h3>
-                  <p class="font-body text-sm tracking-[0.15em] uppercase text-paper/50 mb-4">Den Kern finden</p>
-                  <p class="font-body text-base md:text-lg text-paper/70 leading-relaxed mb-5">
-                    In der Komplexität moderner Kommunikation ist Klarheit die wertvollste Währung. Ich filtere das Wesentliche heraus, ordne Ihre Botschaften und schaffe Struktur – ohne Buzzword-Bingo und Verwirrung.
-                  </p>
-                  <ul class="flex flex-wrap gap-2">
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Analyse</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Ideen</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Konzeption</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Kachel 3 -->
-            <div class="wirklich-card group">
-              <img src="assets/images/Über Mich/03.jpg" alt="" aria-hidden="true"
-                class="absolute inset-0 w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700">
-              <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(10,10,10,0.05) 15%, rgba(10,10,10,0.88) 100%);"></div>
-              <div class="absolute bottom-0 left-0 h-px bg-paper/50 w-0 group-hover:w-full transition-all duration-500"></div>
-              <div class="wirklich-inner absolute inset-0">
-                <span class="absolute top-7 left-7 md:top-8 md:left-8 font-body text-xs tracking-widest text-paper/30 font-medium" aria-hidden="true">03</span>
-                <div class="wirklich-content absolute left-7 right-7 md:left-8 md:right-8 bottom-7 md:bottom-8 overflow-hidden" style="top: 32%;">
-                  <h3 class="font-display font-bold text-2xl md:text-3xl text-paper leading-tight mb-1">
-                    Multidisziplinäres<br>Handwerk
-                  </h3>
-                  <p class="font-body text-sm tracking-[0.15em] uppercase text-paper/50 mb-4">Erst denken, dann handeln</p>
-                  <p class="font-body text-base md:text-lg text-paper/70 leading-relaxed mb-5">
-                    Ich setze um – ohne Reibungsverluste. Briefingwege sind extrem kurz, weil derjenige, der die Strategie entwickelt, auch selbst Hand anlegt: Foto, Video, Animation, Text, Grafikdesign oder KI-Tools.
-                  </p>
-                  <ul class="flex flex-wrap gap-2">
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">
-                      <a href="fotografie.html" class="hover:text-paper transition-colors duration-200 inline-flex items-center gap-1">Foto <span aria-hidden="true">↗</span></a>
-                    </li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">
-                      <a href="videografie.html" class="hover:text-paper transition-colors duration-200 inline-flex items-center gap-1">Video <span aria-hidden="true">↗</span></a>
-                    </li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Podcast</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Animation</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Text & Sprecher</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Grafikdesign</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">Projektmanagement</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">KI-Tools</li>
-                    <li class="font-body text-xs tracking-wider text-paper/70 bg-paper/10 px-3 py-1">
-                      <a href="fine-art.html" class="hover:text-paper transition-colors duration-200 inline-flex items-center gap-1">Fine Art <span aria-hidden="true">↗</span></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+          <!-- Rechts: Bild-Karten -->
+          <div
+            class="fc-right flex-1 relative flex items-center justify-center"
+            style="padding: 1.5rem;"
+          >
+            <div
+              id="fc-card-wrap"
+              style="position: relative; width: min(calc(100% - 2rem), 430px); aspect-ratio: 3/4;"
+            ></div>
           </div>
 
-          <!-- Progress-Indicator -->
-          <div class="hidden md:flex items-center justify-center gap-4" style="position:absolute; bottom:24px; left:0; right:0;" aria-hidden="true">
-            <div class="flex items-center gap-1.5">
-              <div class="wirklich-dot h-0.5 rounded-full transition-all duration-300" style="width:24px; background-color:#0a0a0a;"></div>
-              <div class="wirklich-dot h-0.5 rounded-full transition-all duration-300" style="width:8px; background-color:#0a0a0a; opacity:0.2;"></div>
-              <div class="wirklich-dot h-0.5 rounded-full transition-all duration-300" style="width:8px; background-color:#0a0a0a; opacity:0.2;"></div>
-            </div>
-            <span id="wirklich-counter" class="text-xs text-muted tracking-[0.15em] uppercase font-medium">01 / 03</span>
-          </div>
-
+        </div>
         </div>
       </div>
     </section>

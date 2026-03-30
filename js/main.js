@@ -374,6 +374,251 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0 }).observe(wirklichSection);
   }
 
+  // ── Feature Carousel (Was ich wirklich tue) – Sticky Scroll ──
+  (function() {
+    const FEATURES = [
+      {
+        num: '01',
+        label: 'Strategische Empathie',
+        sub: 'Verstehen statt nur zuhören',
+        body: 'Echte Effizienz entsteht durch Mitdenken. Ich höre nicht nur zu, sondern tauche tief in Ihre Welt ein, um Ihre Ziele wirklich zu durchdringen. Dieser Austausch auf Augenhöhe ist das Fundament für das Vertrauen meiner Kunden.',
+        tags: [
+          { label: 'Markenberatung' },
+          { label: 'Konzeption' },
+          { label: 'Briefing-Analyse' },
+        ],
+        img: 'assets/images/Über Mich/01.jpg',
+      },
+      {
+        num: '02',
+        label: 'Analytische Klarheit',
+        sub: 'Den Kern finden',
+        body: 'In der Komplexität moderner Kommunikation ist Klarheit die wertvollste Währung. Ich filtere das Wesentliche heraus, ordne Ihre Botschaften und schaffe Struktur – ohne Buzzword-Bingo und Verwirrung.',
+        tags: [
+          { label: 'Analyse' },
+          { label: 'Ideen' },
+          { label: 'Konzeption' },
+        ],
+        img: 'assets/images/Über Mich/02.jpg',
+      },
+      {
+        num: '03',
+        label: 'Multidisziplinäres Handwerk',
+        sub: 'Erst denken, dann handeln',
+        body: 'Ich setze um – ohne Reibungsverluste. Briefingwege sind extrem kurz, weil derjenige, der die Strategie entwickelt, auch selbst Hand anlegt: Foto, Video, Animation, Text, Grafikdesign oder KI-Tools.',
+        tags: [
+          { label: 'Foto',              href: 'fotografie.html' },
+          { label: 'Video',             href: 'videografie.html' },
+          { label: 'Podcast' },
+          { label: 'Animation' },
+          { label: 'Text & Sprecher' },
+          { label: 'Grafikdesign' },
+          { label: 'Projektmanagement' },
+          { label: 'KI-Tools' },
+          { label: 'Fine Art',          href: 'fine-art.html' },
+        ],
+        img: 'assets/images/Über Mich/03.jpg',
+      },
+    ];
+
+    const ITEM_H = 65;
+    const N      = FEATURES.length;
+
+    const fcSection = document.getElementById('feature-carousel');
+    const track     = document.getElementById('fc-label-track');
+    const cardWrap  = document.getElementById('fc-card-wrap');
+    if (!fcSection || !track || !cardWrap) return;
+
+    let step          = 0;
+    let prevStep      = 0;
+    let fcIgnoreScroll = false;
+
+    function curIdx() { return ((step % N) + N) % N; }
+
+    function wdist(i, cur) {
+      let d = i - cur;
+      if (d >  N / 2) d -= N;
+      if (d < -N / 2) d += N;
+      return d;
+    }
+
+    // ── Navigation: direkt animieren + Scroll still synchronisieren ──
+    function goToStep(targetStep) {
+      if (targetStep === curIdx()) return;
+      step = targetStep;
+      render();
+      // Scrollposition still synchronisieren damit Scroll-Logik konsistent bleibt
+      if (window.innerWidth >= 768) {
+        const sectionTop = fcSection.offsetTop;
+        const scrollable = fcSection.offsetHeight - window.innerHeight;
+        if (scrollable > 0) {
+          fcIgnoreScroll = true;
+          document.documentElement.style.scrollBehavior = 'auto';
+          window.scrollTo(0, sectionTop + ((targetStep + 0.5) / N) * scrollable);
+          document.documentElement.style.scrollBehavior = '';
+          setTimeout(function() { fcIgnoreScroll = false; }, 120);
+        }
+      }
+    }
+
+    // ── Label-Buttons ──
+    const labelEls = FEATURES.map(function(f, i) {
+      const btn = document.createElement('button');
+      btn.className = 'fc-label';
+      btn.type = 'button';
+      btn.innerHTML =
+        '<span class="fc-label-num">' + f.num + '</span>' +
+        '<span>' + f.label + '</span>';
+      btn.addEventListener('click', function() {
+        if (i !== curIdx()) goToStep(i);
+      });
+      track.appendChild(btn);
+      return btn;
+    });
+
+    // ── Tag-Chips HTML ──
+    function buildTags(tags) {
+      return '<ul style="display:flex;flex-wrap:wrap;gap:0.375rem;margin-top:1rem;">' +
+        tags.map(function(t) {
+          var inner = t.href
+            ? '<a href="' + t.href + '" style="color:inherit;text-decoration:none;" class="hover:text-paper transition-colors duration-200 inline-flex items-center gap-1">' + t.label + ' <span aria-hidden="true">↗</span></a>'
+            : t.label;
+          return '<li class="font-body" style="font-size:0.75rem;letter-spacing:0.05em;' +
+            'color:rgba(249,248,246,0.7);background:rgba(249,248,246,0.1);padding:0.25rem 0.75rem;">' +
+            inner + '</li>';
+        }).join('') +
+        '</ul>';
+    }
+
+    // ── Bild-Karten ──
+    const cardEls = FEATURES.map(function(f, i) {
+      const div = document.createElement('div');
+      div.className = 'fc-card';
+      div.innerHTML =
+        '<div class="fc-card-inner">' +
+        '<img src="' + f.img + '" alt="' + f.label + '" loading="lazy" ' +
+        'class="w-full h-full object-cover" style="will-change:filter;transition:filter 0.7s ease;">' +
+        '<div class="fc-overlay" style="position:absolute;inset:0;' +
+        'background:linear-gradient(to bottom,transparent 15%,rgba(10,10,10,0.94) 100%);' +
+        'opacity:0;transition:opacity 0.6s ease;"></div>' +
+        '<div class="fc-info" style="position:absolute;inset-x:0;bottom:0;padding:1.75rem 1.75rem 2.75rem;' +
+        'opacity:0;transform:translateY(8px);' +
+        'transition:opacity 0.6s ease,transform 0.6s ease;">' +
+        '<p class="font-body" style="font-size:0.6875rem;letter-spacing:0.2em;text-transform:uppercase;' +
+        'color:rgba(249,248,246,0.5);margin-bottom:0.35rem;">' + f.num + ' · ' + f.label + '</p>' +
+        '<p class="font-display font-bold" style="font-size:1.45rem;color:#f9f8f6;line-height:1.2;margin-bottom:0.75rem;">' + f.sub + '.</p>' +
+        '<p class="font-body" style="font-size:1rem;color:rgba(249,248,246,0.75);line-height:1.625;">' + f.body + '</p>' +
+        buildTags(f.tags) +
+        '</div>' +
+        '</div>';
+      div.addEventListener('click', function() {
+        if (i !== curIdx()) goToStep(i);
+      });
+      cardWrap.appendChild(div);
+      return div;
+    });
+
+    // ── Render ──
+    function render() {
+      const cur  = curIdx();
+      const prev = prevStep;
+
+      labelEls.forEach(function(btn, i) {
+        const d      = wdist(i, cur);
+        const active = i === cur;
+        btn.style.transform       = 'translateY(' + (d * ITEM_H) + 'px)';
+        btn.style.opacity         = Math.max(0, 1 - Math.abs(d) * 0.28);
+        btn.style.backgroundColor = 'transparent';
+        btn.style.borderColor     = 'transparent';
+        btn.style.color           = active ? '#0a0a0a' : 'rgba(10,10,10,0.38)';
+        btn.style.fontWeight      = active ? '700'     : '400';
+        btn.style.fontSize        = active ? '1rem'    : '0.8rem';
+      });
+
+      cardEls.forEach(function(card, i) {
+        const d      = wdist(i, cur);
+        const active = d === 0;
+        const near   = Math.abs(d) === 1;
+        const tx     = active ? 0 : (d < 0 ? -110 : 110);
+        const sc     = active ? 1 : (near ? 0.86 : 0.72);
+        const op     = active ? 1 : (near ? 0.35 : 0);
+        const ro     = 0;
+
+        // ── Crossing-Kachel: war near, bleibt near, wechselt aber Seite ──
+        // → kurz ausblenden, teleportieren, wieder einblenden – kein sichtbarer Querflug
+        const prevD      = wdist(i, prev);
+        const isCrossing = prev !== cur &&
+                           Math.abs(prevD) === 1 && Math.abs(d) === 1 &&
+                           prevD !== d;
+
+        if (isCrossing) {
+          card.style.transition = 'opacity 0s, transform 0s';
+          card.style.opacity    = '0';
+          card.style.transform  = 'translateX(' + tx + 'px) scale(' + sc + ') rotate(' + ro + 'deg)';
+          card.style.zIndex     = '10';
+          card.style.pointerEvents = 'auto';
+          card.style.cursor     = 'pointer';
+          card.classList.remove('is-active');
+          void card.offsetHeight; // reflow erzwingen
+          card.style.transition = ''; // CSS-Klassen-Transition wieder aktiv
+          requestAnimationFrame(function() {
+            card.style.opacity = String(op);
+          });
+          return;
+        }
+
+        card.style.transform     = 'translateX(' + tx + 'px) scale(' + sc + ') rotate(' + ro + 'deg)';
+        card.style.opacity       = String(op);
+        card.style.zIndex        = active ? '20' : (near ? '10' : '0');
+        card.style.pointerEvents = (active || near) ? 'auto' : 'none';
+        card.style.cursor        = near ? 'pointer' : 'default';
+        card.classList.toggle('is-active', active);
+
+        const img     = card.querySelector('img');
+        const overlay = card.querySelector('.fc-overlay');
+        const info    = card.querySelector('.fc-info');
+        if (img)     img.style.filter      = active ? 'none' : 'grayscale(100%) brightness(0.75)';
+        if (overlay) overlay.style.opacity = active ? '1' : '0';
+        if (info) {
+          info.style.opacity   = active ? '1' : '0';
+          info.style.transform = active ? 'translateY(0)' : 'translateY(8px)';
+        }
+      });
+
+      prevStep = cur;
+    }
+
+    // ── Scroll-getriebene Steuerung (Desktop) ──
+    function updateFcScroll() {
+      if (fcIgnoreScroll || window.innerWidth < 768) return;
+      const sectionTop = fcSection.offsetTop;
+      const scrollable = fcSection.offsetHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+
+      const progress = Math.max(0, Math.min(1, (window.scrollY - sectionTop) / scrollable));
+      const newStep  = Math.min(Math.floor(progress * N), N - 1);
+
+      if (newStep !== step) {
+        // Immer nur einen Schritt weiter – garantiert saubere Animation
+        const dir = newStep > step ? 1 : -1;
+        step = ((step + dir) % N + N) % N;
+        render();
+      }
+    }
+
+    let fcRafPending = false;
+    window.addEventListener('scroll', function() {
+      if (!fcRafPending) {
+        fcRafPending = true;
+        requestAnimationFrame(function() { updateFcScroll(); fcRafPending = false; });
+      }
+    }, { passive: true });
+    window.addEventListener('resize', updateFcScroll, { passive: true });
+
+    render();
+    updateFcScroll();
+  }());
+
   // Header: transparent über Hero-Video (nur auf index.html), sonst immer paper
   const header   = document.querySelector('header');
   const hero     = document.getElementById('hero');
