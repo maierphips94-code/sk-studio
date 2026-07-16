@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/output.css">
+  <link rel="stylesheet" href="assets/output.css?v=13">
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 
   <style>
@@ -72,6 +72,7 @@
       justify-content: center;
       background: #f9f8f6;
       border: 1px solid rgba(10, 10, 10, 0.12);
+      border-radius: 0.25rem;
       cursor: pointer;
       transition: background 0.2s, border-color 0.2s, color 0.2s;
       color: #0a0a0a;
@@ -115,7 +116,7 @@
         <li><a href="videografie.html" class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Videografie</a></li>
         <li><a href="fine-art.html"    class="font-body text-sm text-muted hover:text-ink transition-colors duration-300 tracking-wide">Fine Art</a></li>
         <li>
-          <a href="index.html#kontakt" class="font-body text-sm px-5 py-2 border border-ink text-ink hover:bg-ink hover:text-paper transition-all duration-300 tracking-wide ml-2">
+          <a href="index.html#kontakt" class="font-body text-sm px-5 py-2 border border-ink rounded bg-ink text-paper hover:bg-ink/80 transition-all duration-300 tracking-wide ml-2">
             Kontakt
           </a>
         </li>
@@ -153,15 +154,8 @@
           data-fade data-fade-delay="1"
         >
           Fotografie.
+          <span class="block mt-6 md:mt-8" style="font-size: clamp(1.3rem, 3vw, 2.25rem);">Beobachtung. Augenblick. Inszenierung.</span>
         </h1>
-        <p class="font-body text-lg md:text-xl text-muted max-w-xl leading-relaxed" style="margin-top: 2rem;" data-fade data-fade-delay="2">
-          Jedes Bild ist die logische Konsequenz Ihrer Markenstrategie.
-        </p>
-        <p class="mt-6 font-body text-sm md:text-base text-muted/80 max-w-2xl leading-relaxed" data-fade data-fade-delay="3">
-          Ob Corporate Photography, Produkt- oder Eventfotografie – die Kamera
-          folgt der Strategie, nicht dem Zufall. Jede Kategorie zeigt einen
-          Ausschnitt meiner Arbeit.
-        </p>
       </div>
     </section>
 
@@ -181,7 +175,7 @@
             <template x-for="(cat, key) in categories" :key="key">
               <button
                 @click="switchCategory(key)"
-                class="px-6 py-3 rounded-full border font-body text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+                class="px-6 py-3 rounded border font-body text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
                 :class="activeCategory === key
                   ? 'bg-ink text-paper border-ink'
                   : 'bg-transparent text-muted border-ink/25 hover:border-ink hover:text-ink'"
@@ -204,7 +198,7 @@
               :class="cls(i)"
               @click="if(pos(i) !== 0) go(pos(i))"
             >
-              <div class="cf-card overflow-hidden relative" :class="img.portrait ? 'bg-paper portrait-card' : 'bg-stone'" style="aspect-ratio: 4/3;">
+              <div class="cf-card overflow-hidden rounded relative" :class="img.portrait ? 'bg-paper portrait-card' : 'bg-stone'" style="aspect-ratio: 4/3;">
                 <template x-if="img.placeholder">
                   <div class="w-full h-full bg-neutral-200 flex items-center justify-center">
                     <span
@@ -222,7 +216,6 @@
                       :style="img.portrait
                         ? 'width:100%; height:100%; object-fit:contain; object-position:center center;'
                         : 'width:100%; height:100%; object-fit:cover; object-position:' + img.objPos"
-                      loading="lazy"
                     >
                   </div>
                 </template>
@@ -288,7 +281,7 @@
         </h2>
         <a
           href="mailto:kontakt@koenig-stefan.de"
-          class="inline-flex items-center gap-3 bg-paper text-ink font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-stone transition-colors duration-300"
+          class="inline-flex items-center gap-3 bg-paper text-ink rounded font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-stone transition-colors duration-300"
         >
           Kontakt aufnehmen <span aria-hidden="true">→</span>
         </a>

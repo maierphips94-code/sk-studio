@@ -33,7 +33,7 @@
   Claim „Mitdenken, erkennen, lösen." bleibt roter Faden.
   ═══════════════════════════════════════════════════════
 -->
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +55,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
   <!-- Compiled CSS (npm run build → assets/output.css) -->
-  <link rel="stylesheet" href="assets/output.css?v=7">
+  <link rel="stylesheet" href="assets/output.css?v=14">
 
   <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
@@ -139,7 +139,7 @@
         <li><a href="videografie.html" class="nav-link font-body text-sm tracking-wide transition-colors duration-300">Videografie</a></li>
         <li><a href="fine-art.html"    class="nav-link font-body text-sm tracking-wide transition-colors duration-300">Fine Art</a></li>
         <li>
-          <a href="#kontakt" class="nav-cta font-body text-sm px-5 py-2 border transition-all duration-300 tracking-wide ml-2">
+          <a href="#kontakt" class="nav-cta font-body text-sm px-5 py-2 border border-ink rounded bg-ink text-paper hover:bg-ink/80 transition-all duration-300 tracking-wide ml-2">
             Kontakt
           </a>
         </li>
@@ -245,7 +245,7 @@
           <div class="mt-16 md:mt-20 flex flex-col sm:flex-row items-start sm:items-center gap-4" data-fade data-fade-delay="3">
             <a
               href="#kontakt"
-              class="inline-flex items-center gap-3 bg-transparent text-paper border border-paper font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-paper hover:text-ink transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-paper"
+              class="inline-flex items-center gap-3 bg-transparent text-paper border border-paper rounded font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-paper hover:text-ink transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-paper"
             >
               Kontakt aufnehmen <span aria-hidden="true">→</span>
             </a>
@@ -260,18 +260,17 @@
 
 
     <!-- ═══════════════════════════════════════════════════════ -->
-    <!-- WAS ICH TUE – FEATURE CAROUSEL                          -->
+    <!-- WAS ICH TUE                                              -->
     <!-- ═══════════════════════════════════════════════════════ -->
     <section
-      id="feature-carousel"
-      class="bg-paper relative h-auto md:h-[300vh]"
+      id="was-ich-tue"
+      class="bg-paper py-24 md:py-36 px-6 md:px-10"
       aria-labelledby="fc-heading"
     >
-      <div class="md:sticky md:top-0 md:h-screen md:overflow-hidden relative px-6 md:px-10 py-24 md:py-0">
-        <div class="max-w-6xl mx-auto" style="padding-top: 0; padding-bottom: 0;" id="fc-inner">
+      <div class="max-w-6xl mx-auto">
 
         <!-- Header -->
-        <div class="mb-10 md:mb-14 md:pt-[88px]" data-fade>
+        <div class="mb-16 md:mb-20" data-fade>
           <p class="section-label mb-6">Was ich tue</p>
           <h2
             id="fc-heading"
@@ -282,35 +281,74 @@
           </h2>
         </div>
 
-        <!-- Carousel -->
-        <div
-          class="fc-container flex flex-col md:flex-row" style="overflow-x: clip;"
-          data-fade data-fade-delay="1"
-        >
+        <!-- Kacheln: klare Reihenfolge, nebeneinander, einfarbiger Hintergrund -->
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_5rem_1fr_5rem_1fr] lg:grid-cols-[1fr_6rem_1fr_6rem_1fr]">
 
-          <!-- Links: scrollende Label-Chips -->
-          <div
-            class="fc-left w-full md:w-[42%] relative overflow-hidden"
-          >
-            <div class="absolute inset-x-0 top-0 h-16 md:h-20 z-10 pointer-events-none"
-                 style="background: linear-gradient(to bottom, #f9f8f6 40%, transparent);"></div>
-            <div class="absolute inset-x-0 bottom-0 h-16 md:h-20 z-10 pointer-events-none"
-                 style="background: linear-gradient(to top, #f9f8f6 40%, transparent);"></div>
-            <div id="fc-label-track" style="position: absolute; inset: 0;"></div>
+          <!-- 01 -->
+          <div class="flex flex-col pb-12 md:pb-0 border-b md:border-b-0 border-ink/10" data-fade>
+            <div class="flex-1">
+              <span class="font-display font-extrabold text-ink/10 leading-none block" style="font-size: clamp(3rem, 6vw, 4.5rem);">01</span>
+              <p class="section-label mt-6 mb-3">Strategische Empathie</p>
+              <h3 class="font-display font-bold text-ink leading-snug mb-4" style="font-size: clamp(1.15rem, 2vw, 1.4rem);">Verstehen statt nur zuhören.</h3>
+              <p class="font-body text-sm md:text-base text-ink/70 leading-relaxed">
+                Echte Effizienz entsteht durch Mitdenken. Ich höre nicht nur zu, sondern tauche tief in Ihre Welt ein, um Ihre Ziele wirklich zu durchdringen. Dieser Austausch auf Augenhöhe ist das Fundament für das Vertrauen meiner Kunden.
+              </p>
+            </div>
+            <ul class="flex flex-col gap-2 mt-8 w-fit" role="list">
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Markenberatung</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Konzeption</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Briefing-Analyse</li>
+            </ul>
           </div>
 
-          <!-- Rechts: Bild-Karten -->
-          <div
-            class="fc-right flex-1 relative flex items-center justify-center"
-            style="padding: 1.5rem;"
-          >
-            <div
-              id="fc-card-wrap"
-              style="position: relative; width: min(calc(100% - 2rem), 430px); aspect-ratio: 3/4;"
-            ></div>
+          <div class="hidden md:flex md:justify-center" aria-hidden="true">
+            <div class="w-px bg-ink/10 my-2"></div>
           </div>
 
-        </div>
+          <!-- 02 -->
+          <div class="flex flex-col py-12 md:py-0 border-b md:border-b-0 border-ink/10" data-fade data-fade-delay="1">
+            <div class="flex-1">
+              <span class="font-display font-extrabold text-ink/10 leading-none block" style="font-size: clamp(3rem, 6vw, 4.5rem);">02</span>
+              <p class="section-label mt-6 mb-3">Analytische Klarheit</p>
+              <h3 class="font-display font-bold text-ink leading-snug mb-4" style="font-size: clamp(1.15rem, 2vw, 1.4rem);">Den Kern finden.</h3>
+              <p class="font-body text-sm md:text-base text-ink/70 leading-relaxed">
+                In der Komplexität moderner Kommunikation ist Klarheit die wertvollste Währung. Ich filtere das Wesentliche heraus, ordne Ihre Botschaften und schaffe Struktur – ohne Buzzword-Bingo und Verwirrung.
+              </p>
+            </div>
+            <ul class="flex flex-col gap-2 mt-8 w-fit" role="list">
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Analyse</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Ideen</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Konzeption</li>
+            </ul>
+          </div>
+
+          <div class="hidden md:flex md:justify-center" aria-hidden="true">
+            <div class="w-px bg-ink/10 my-2"></div>
+          </div>
+
+          <!-- 03 -->
+          <div class="flex flex-col pt-12 md:pt-0" data-fade data-fade-delay="2">
+            <div class="flex-1">
+              <span class="font-display font-extrabold text-ink/10 leading-none block" style="font-size: clamp(3rem, 6vw, 4.5rem);">03</span>
+              <p class="section-label mt-6 mb-3">Multidisziplinäres Handwerk</p>
+              <h3 class="font-display font-bold text-ink leading-snug mb-4" style="font-size: clamp(1.15rem, 2vw, 1.4rem);">Erst denken, dann handeln.</h3>
+              <p class="font-body text-sm md:text-base text-ink/70 leading-relaxed">
+                Ich setze um – ohne Reibungsverluste. Briefingwege sind extrem kurz, weil derjenige, der die Strategie entwickelt, auch selbst Hand anlegt: Foto, Video, Animation, Text, Grafikdesign oder KI-Tools.
+              </p>
+            </div>
+            <ul class="flex flex-wrap gap-2 mt-8" role="list">
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200"><a href="fotografie.html" class="inline-flex items-center gap-1">Foto <span aria-hidden="true">↗</span></a></li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200"><a href="videografie.html" class="inline-flex items-center gap-1">Video <span aria-hidden="true">↗</span></a></li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200"><a href="fine-art.html" class="inline-flex items-center gap-1">Fine Art <span aria-hidden="true">↗</span></a></li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Animation</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Text &amp; Sprecher</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Grafikdesign</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Projektmanagement</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">KI-Tools</li>
+              <li class="font-body text-xs tracking-wide text-ink/70 bg-ink/5 rounded px-3 py-1.5 hover:bg-ink hover:text-paper transition-colors duration-200">Podcast</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
@@ -349,7 +387,7 @@
               class="font-display font-extrabold leading-[0.92] tracking-tight text-ink mb-16"
               style="font-size: clamp(1.8rem, 4vw, 3rem);"
             >
-              Akademiker.<br>Praktiker.<br>Münchener.
+              Think. Act.
             </h2>
             <div class="font-body text-base md:text-lg text-ink/75 leading-relaxed mb-10 space-y-4">
               <p>
@@ -460,7 +498,7 @@
               <template x-for="(cat, key) in categories" :key="key">
                 <button
                   @click="switchCategory(key)"
-                  class="px-6 py-3 rounded-full border font-body text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+                  class="px-6 py-3 rounded border font-body text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
                   :class="active === key
                     ? 'bg-ink text-paper border-ink'
                     : 'bg-transparent text-muted border-ink/25 hover:border-ink hover:text-ink'"
@@ -470,9 +508,9 @@
             </div>
 
             <!-- Firmenliste -->
-            <ul class="space-y-0 w-full md:min-h-[29rem]" role="list">
+            <ul class="space-y-0 w-full md:min-h-[22rem]" role="list">
               <template x-for="(firma, i) in categories[active].firms" :key="active + '-' + i">
-                <li class="border-b border-ink/10 py-4 last:border-b-0">
+                <li class="border-b border-ink/10 py-2.5 last:border-b-0">
                   <span
                     class="font-body font-normal text-ink text-base
                            block leading-snug md:whitespace-nowrap"
@@ -547,7 +585,7 @@
             <div class="mt-6">
               <a
                 href="mailto:kontakt@koenig-stefan.de"
-                class="inline-flex items-center gap-3 bg-transparent border border-paper text-paper font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-paper/10 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-paper"
+                class="inline-flex items-center gap-3 bg-transparent border border-paper rounded text-paper font-body text-sm font-medium px-8 py-4 tracking-wide hover:bg-paper/10 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-paper"
               >
                 E-Mail schreiben <span aria-hidden="true">→</span>
               </a>
@@ -594,6 +632,7 @@
               'Warema SE',
               'Aral / BP',
               'Garmin',
+              'DJE Kapital AG',
               'Lufthansa Group',
               'PSD Bank'
             ]
