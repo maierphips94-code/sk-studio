@@ -191,7 +191,7 @@
       <div class="max-w-6xl mx-auto relative px-14">
 
         <!-- Coverflow Track -->
-        <div class="cf-wrap">
+        <div class="cf-wrap" @touchstart="onTouchStart($event)" @touchend="onTouchEnd($event)">
           <template x-for="(img, i) in images" :key="activeCategory + '-' + i">
             <div
               class="cf-item"
@@ -373,6 +373,21 @@
         },
         go(d) {
           this.cur = (this.cur + d + this.n) % this.n;
+        },
+
+        // Touch-Swipe (Mobile)
+        touchStartX: 0,
+        touchStartY: 0,
+        onTouchStart(e) {
+          this.touchStartX = e.changedTouches[0].clientX;
+          this.touchStartY = e.changedTouches[0].clientY;
+        },
+        onTouchEnd(e) {
+          const dx = e.changedTouches[0].clientX - this.touchStartX;
+          const dy = e.changedTouches[0].clientY - this.touchStartY;
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            this.go(dx < 0 ? 1 : -1);
+          }
         },
         pos(i) {
           let p = (i - this.cur + this.n) % this.n;
