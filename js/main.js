@@ -375,54 +375,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0 }).observe(wirklichSection);
   }
 
-  // Header: transparent über Hero-Video (nur auf index.html), sonst immer paper
-  const header   = document.querySelector('header');
-  const hero     = document.getElementById('hero');
-  const logo     = document.getElementById('header-logo');
-
-  // Alle Nav-Links und Burger-Bars im Header (Kontakt-Button hat eigene, CSS-gesteuerte Farblogik)
-  const navLinks   = header ? header.querySelectorAll('nav ul a:not(.nav-cta)') : [];
-  const burgerBars = header ? header.querySelectorAll('.burger-bar') : [];
-
-  if (header && hero) {
-    // Homepage: header reagiert auf Scroll über Video-Hero
-    const onScroll = () => {
-      const heroBottom = hero.getBoundingClientRect().bottom;
-      const overHero   = heroBottom > 64;
-
-      header.classList.toggle('bg-transparent',    overHero);
-      header.classList.toggle('border-transparent', overHero);
-      header.classList.toggle('bg-paper/95',       !overHero);
-      header.classList.toggle('border-stone',      !overHero);
-
-      // Logo: invertiert (weiß) über Video, multiply auf hellem Header
-      if (logo) {
-        logo.style.mixBlendMode = overHero ? 'normal' : 'multiply';
-        logo.style.filter       = overHero ? 'invert(1)' : 'none';
-      }
-
-      // Nav-Links: hell über Video, Standard-Farbe auf paper
-      navLinks.forEach(link => {
-        // Aktiven Link (aria-current) nicht überschreiben
-        if (link.getAttribute('aria-current') === 'page') return;
-        link.style.color = overHero ? 'rgba(249,248,246,0.75)' : '';
-      });
-
-      // Burger-Bars: weiß über Video, dunkel auf paper
-      burgerBars.forEach(bar => {
-        bar.style.backgroundColor = overHero ? 'rgba(249,248,246,0.9)' : '';
-      });
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-  } else if (header) {
-    // Unterseiten: header immer paper – keine Scroll-Logik nötig
-    header.classList.add('bg-paper/95', 'border-stone');
-  }
-
 });
+
+// Header: transparent über Hero-Video (nur auf index.html), sonst immer paper
+// (bewusst außerhalb von DOMContentLoaded: läuft synchron beim Parsen des
+// Script-Tags am Ende von <body>, Alpines x-effect kann sonst früher feuern
+// als window.setMobileMenuOpen definiert ist)
+const header   = document.querySelector('header');
+const hero     = document.getElementById('hero');
+const logo     = document.getElementById('header-logo');
+
+// Alle Nav-Links und Burger-Bars im Header (Kontakt-Button hat eigene, CSS-gesteuerte Farblogik)
+const navLinks   = header ? header.querySelectorAll('nav ul a:not(.nav-cta)') : [];
+const burgerBars = header ? header.querySelectorAll('.burger-bar') : [];
+
+// Mobile Menü offen? Erzwingt hellen Header (weiß, schwarzes Logo, schwarze Trennlinie)
+// unabhängig von der Scroll-Position – wird von Alpine (x-effect) aufgerufen.
+let mobileMenuOpen  = false;
+let updateHeaderNow = null;
+window.setMobileMenuOpen = (isOpen) => {
+  mobileMenuOpen = isOpen;
+  if (updateHeaderNow) updateHeaderNow();
+};
+
+if (header && hero) {
+  // Homepage: header reagiert auf Scroll über Video-Hero (+ Menü-Status)
+  const onScroll = () => {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    const overHero   = !mobileMenuOpen && heroBottom > 64;
+
+    header.classList.toggle('bg-transparent',     overHero);
+    header.classList.toggle('border-transparent', overHero);
+    header.classList.toggle('bg-paper/95',        !overHero);
+    header.classList.toggle('border-stone',       !overHero && !mobileMenuOpen);
+    header.classList.toggle('border-ink',         mobileMenuOpen);
+
+    // Logo: invertiert (weiß) über Video, multiply auf hellem Header
+    if (logo) {
+      logo.style.mixBlendMode = overHero ? 'normal' : 'multiply';
+      logo.style.filter       = overHero ? 'invert(1)' : 'none';
+    }
+
+    // Nav-Links: hell über Video, Standard-Farbe auf paper
+    navLinks.forEach(link => {
+      // Aktiven Link (aria-current) nicht überschreiben
+      if (link.getAttribute('aria-current') === 'page') return;
+      link.style.color = overHero ? 'rgba(249,248,246,0.75)' : '';
+    });
+
+    // Burger-Bars: weiß über Video, dunkel auf paper
+    burgerBars.forEach(bar => {
+      bar.style.backgroundColor = overHero ? 'rgba(249,248,246,0.9)' : '';
+    });
+  };
+
+  updateHeaderNow = onScroll;
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+} else if (header) {
+  // Unterseiten: header immer paper – Trennlinie wird bei offenem Menü schwarz
+  header.classList.add('bg-paper/95');
+  updateHeaderNow = () => {
+    header.classList.toggle('border-ink',   mobileMenuOpen);
+    header.classList.toggle('border-stone', !mobileMenuOpen);
+  };
+  updateHeaderNow();
+}
 
 // ── Bildschutz: Rechtsklick, Drag & Drop und iOS-Touch-Callout auf allen Bildern deaktivieren ──
 // (Event-Delegation auf document, damit auch dynamisch eingefügte Bilder erfasst werden)
