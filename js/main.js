@@ -389,7 +389,7 @@ const logo     = document.getElementById('header-logo');
 const navLinks   = header ? header.querySelectorAll('nav ul a:not(.nav-cta)') : [];
 const burgerBars = header ? header.querySelectorAll('.burger-bar') : [];
 
-// Mobile Menü offen? Erzwingt hellen Header (weiß, schwarzes Logo, schwarze Trennlinie)
+// Mobile Menü offen? Erzwingt vollständig deckenden weißen Header (schwarzes Logo)
 // unabhängig von der Scroll-Position – wird von Alpine (x-effect) aufgerufen.
 let mobileMenuOpen  = false;
 let updateHeaderNow = null;
@@ -405,10 +405,10 @@ if (header && hero) {
     const overHero   = !mobileMenuOpen && heroBottom > 64;
 
     header.classList.toggle('bg-transparent',     overHero);
-    header.classList.toggle('border-transparent', overHero);
-    header.classList.toggle('bg-paper/95',        !overHero);
+    header.classList.toggle('border-transparent', overHero || mobileMenuOpen);
+    header.classList.toggle('bg-paper/95',        !overHero && !mobileMenuOpen);
+    header.classList.toggle('bg-paper',           mobileMenuOpen);
     header.classList.toggle('border-stone',       !overHero && !mobileMenuOpen);
-    header.classList.toggle('border-ink',         mobileMenuOpen);
 
     // Logo: invertiert (weiß) über Video, multiply auf hellem Header
     if (logo) {
@@ -434,10 +434,12 @@ if (header && hero) {
   onScroll();
 
 } else if (header) {
-  // Unterseiten: header immer paper – Trennlinie wird bei offenem Menü schwarz
+  // Unterseiten: header immer paper – bei offenem Menü vollständig deckend, ohne Trennlinie
   header.classList.add('bg-paper/95');
   updateHeaderNow = () => {
-    header.classList.toggle('border-ink',   mobileMenuOpen);
+    header.classList.toggle('bg-paper',     mobileMenuOpen);
+    header.classList.toggle('bg-paper/95',  !mobileMenuOpen);
+    header.classList.toggle('border-transparent', mobileMenuOpen);
     header.classList.toggle('border-stone', !mobileMenuOpen);
   };
   updateHeaderNow();

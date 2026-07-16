@@ -495,11 +495,11 @@
           <div class="w-full md:w-fit">
 
             <!-- 3 Kategorie-Buttons -->
-            <div class="flex flex-wrap gap-3 md:gap-4 mb-10">
+            <div class="flex flex-nowrap gap-1.5 md:gap-4 mb-10">
               <template x-for="(cat, key) in categories" :key="key">
                 <button
                   @click="switchCategory(key)"
-                  class="px-6 py-3 rounded border font-body text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+                  class="px-2.5 py-1.5 md:px-6 md:py-3 rounded border font-body text-[11px] md:text-sm font-medium tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink whitespace-nowrap"
                   :class="active === key
                     ? 'bg-ink text-paper border-ink'
                     : 'bg-transparent text-muted border-ink/25 hover:border-ink hover:text-ink'"
