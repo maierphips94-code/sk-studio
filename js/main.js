@@ -456,16 +456,24 @@ document.addEventListener('dragstart', (e) => {
 
 // ── Hero-Video: Autoplay-Fallback ──
 // iOS blockiert Video-Autoplay systemweit im Stromsparmodus, unabhängig von
-// muted/playsinline. Damit das Video trotzdem ohne sichtbaren Klick startet,
-// wird beim allerersten Tap/Scroll (den der Nutzer ohnehin macht) ein stiller
-// play()-Versuch ausgelöst.
+// muted/playsinline. Ein abgeschlossener Tap (click/touchend) zählt als echte
+// User-Geste und darf play() auslösen – touchstart/scroll dagegen NICHT
+// (WebKit wertet das nicht als abgeschlossene Geste, der Aufruf würde
+// stillschweigend fehlschlagen). Es wird bei jedem Tap erneut versucht,
+// bis die Wiedergabe tatsächlich startet.
 const heroVideo = document.getElementById('hero-video');
 if (heroVideo) {
   const tryPlayHeroVideo = () => {
-    if (heroVideo.paused) heroVideo.play().catch(() => {});
+    if (!heroVideo.paused) return;
+    const p = heroVideo.play();
+    if (p && p.then) {
+      p.then(() => {
+        document.removeEventListener('click', tryPlayHeroVideo);
+        document.removeEventListener('touchend', tryPlayHeroVideo);
+      }).catch(() => {});
+    }
   };
   tryPlayHeroVideo();
-  ['touchstart', 'scroll', 'click'].forEach((evt) => {
-    document.addEventListener(evt, tryPlayHeroVideo, { once: true, passive: true });
-  });
+  document.addEventListener('click', tryPlayHeroVideo, { passive: true });
+  document.addEventListener('touchend', tryPlayHeroVideo, { passive: true });
 }
