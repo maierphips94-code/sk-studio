@@ -98,25 +98,26 @@
           <!-- Ankündigung -->
           <div class="md:max-w-lg">
             <p class="section-label-light mb-5">Vernissage</p>
-            <h2 class="font-display font-extrabold leading-[0.95] tracking-tight text-paper" style="font-size: clamp(1.6rem, 3.4vw, 2.5rem);">
-              Parallels and Asymmetries.
+            <h2 class="font-display font-light uppercase text-paper whitespace-nowrap text-[15px] lg:text-[23px]" style="letter-spacing: 0.15em;">
+              Parallels <span class="mx-1 md:mx-2">x</span> Asymmetries
             </h2>
-            <p class="font-body font-bold text-base md:text-lg text-paper/90 leading-relaxed mt-4">
-              Im
-              <img
-                src="assets/images/SK_logo_schwarz.png"
-                alt="SK"
-                class="inline align-baseline h-[0.85em] w-auto mx-1"
-                style="filter: invert(1);"
-              >
-              Studio am TT.09.2026.
+            <p class="font-body font-bold text-base md:text-lg text-paper leading-relaxed mt-4">
+              03. September 2026.
             </p>
             <p class="flex items-center gap-2 font-body text-sm md:text-base text-paper/70 leading-relaxed mt-10">
               <svg class="w-4 h-4 shrink-0 text-paper/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
               </svg>
-              Elsenheimerstr. 24, 80687 München
+              <span>
+                <img
+                  src="assets/images/SK_logo_schwarz.png"
+                  alt="SK"
+                  class="inline align-baseline h-[0.8em] w-auto mr-0.5"
+                  style="filter: invert(1); opacity: 0.7;"
+                >
+                Studios, Elsenheimerstr. 24, 80687 München
+              </span>
             </p>
             <button
               type="button"
@@ -128,11 +129,11 @@
           </div>
 
           <!-- Bild: darf rechts bewusst aus der max-w-6xl-Spalte herauslaufen -->
-          <div class="relative w-full md:w-[26rem] lg:w-[34rem] shrink-0 md:-mr-10 lg:-mr-24">
-            <div class="overflow-hidden rounded aspect-[4/3]">
+          <div class="relative w-full md:w-[22.1rem] lg:w-[28.9rem] shrink-0 md:-mr-10 lg:-mr-24">
+            <div class="overflow-hidden rounded aspect-[4/3] border-8 border-paper">
               <img
-                src="assets/images/Fine%20Art/DSC_9484_original%20Kopie.jpg"
-                alt="Time Square – Fine Art Fotografie von Stefan G. König"
+                src="assets/images/Fine%20Art/_A1_4857%20Kopie.jpg"
+                alt="Montreal – Fine Art Fotografie von Stefan G. König"
                 width="800" height="600"
                 loading="lazy"
                 class="w-full h-full object-cover"
@@ -144,9 +145,9 @@
               style="-webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, transparent 100%);"
               aria-hidden="true"
             >
-              <div class="aspect-[4/3]" style="transform: scaleY(-1);">
+              <div class="aspect-[4/3] border-8 border-paper" style="transform: scaleY(-1);">
                 <img
-                  src="assets/images/Fine%20Art/DSC_9484_original%20Kopie.jpg"
+                  src="assets/images/Fine%20Art/_A1_4857%20Kopie.jpg"
                   alt=""
                   width="800" height="600"
                   loading="lazy"
@@ -202,10 +203,10 @@
           </button>
 
           <p class="section-label mb-3">Anmeldung</p>
-          <h3 id="vernissage-form-heading" class="font-display font-bold text-ink leading-snug mb-1" style="font-size: clamp(1.2rem, 2.4vw, 1.5rem);">
-            Parallels and Asymmetries
+          <h3 id="vernissage-form-heading" class="font-display font-light uppercase text-ink leading-snug mb-1" style="font-size: clamp(1rem, 2vw, 1.25rem); letter-spacing: 0.2em;">
+            Parallels <span class="mx-1">x</span> Asymmetries
           </h3>
-          <p class="font-body text-sm text-muted mb-8">TT.09.2026 · SK Studio, Elsenheimerstr. 24</p>
+          <p class="font-body text-sm text-muted mb-8">03. September 2026 · SK Studios, Elsenheimerstr. 24</p>
 
           <form @submit.prevent="submit()" novalidate>
             <div class="mb-5">
@@ -625,7 +626,7 @@
         count: 1,
         message: '',
         submit() {
-          const subject = 'Anmeldung Vernissage: Parallels and Asymmetries';
+          const subject = 'Anmeldung Vernissage: Parallels x Asymmetries';
           const bodyLines = [
             'Name: ' + this.name,
             'E-Mail: ' + this.email,
