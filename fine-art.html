@@ -210,6 +210,17 @@
 
           <form @submit.prevent="submit()" novalidate>
             <div class="mb-5">
+              <label for="rsvp-date" class="block font-body text-xs tracking-[0.15em] uppercase text-muted mb-2">Termin</label>
+              <select
+                id="rsvp-date" x-model="date" required
+                class="w-full font-body text-sm text-ink bg-transparent border border-stone rounded px-4 py-3 focus:outline-none focus:border-ink transition-colors duration-200"
+              >
+                <option value="" disabled>Bitte wählen</option>
+                <option value="03. September 2026">03. September 2026</option>
+                <option value="10. September 2026">10. September 2026</option>
+              </select>
+            </div>
+            <div class="mb-5">
               <label for="rsvp-name" class="block font-body text-xs tracking-[0.15em] uppercase text-muted mb-2">Name</label>
               <input
                 id="rsvp-name" type="text" x-model="name" required
@@ -612,6 +623,7 @@
     function vernissage() {
       return {
         open: false,
+        date: '',
         name: '',
         email: '',
         count: 1,
@@ -619,6 +631,7 @@
         submit() {
           const subject = 'Anmeldung Vernissage: Parallels x Asymmetries';
           const bodyLines = [
+            'Termin: ' + this.date,
             'Name: ' + this.name,
             'E-Mail: ' + this.email,
             'Anzahl Personen: ' + this.count
@@ -626,7 +639,7 @@
           if (this.message) {
             bodyLines.push('', 'Nachricht:', this.message);
           }
-          const mailto = 'mailto:kontakt@koenig-stefan.de'
+          const mailto = 'mailto:pxa@koenig-stefan.de'
             + '?subject=' + encodeURIComponent(subject)
             + '&body=' + encodeURIComponent(bodyLines.join('\n'));
           window.location.href = mailto;
