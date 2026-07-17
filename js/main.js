@@ -453,3 +453,19 @@ document.addEventListener('contextmenu', (e) => {
 document.addEventListener('dragstart', (e) => {
   if (e.target.tagName === 'IMG') e.preventDefault();
 });
+
+// ── Hero-Video: Autoplay-Fallback ──
+// iOS blockiert Video-Autoplay systemweit im Stromsparmodus, unabhängig von
+// muted/playsinline. Damit das Video trotzdem ohne sichtbaren Klick startet,
+// wird beim allerersten Tap/Scroll (den der Nutzer ohnehin macht) ein stiller
+// play()-Versuch ausgelöst.
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+  const tryPlayHeroVideo = () => {
+    if (heroVideo.paused) heroVideo.play().catch(() => {});
+  };
+  tryPlayHeroVideo();
+  ['touchstart', 'scroll', 'click'].forEach((evt) => {
+    document.addEventListener(evt, tryPlayHeroVideo, { once: true, passive: true });
+  });
+}
